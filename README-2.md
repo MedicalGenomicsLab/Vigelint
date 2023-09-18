@@ -5,7 +5,7 @@
 2. CVPO
 3. JEDI
 
-*** PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN) *** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)
+<h2>PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN) *** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)</h2> 
 
 - [System requirements](#system-requirements)
   - [Python dependencies](#python-dependencies)
