@@ -1,4 +1,9 @@
-<h1> PADA-WAN: A pipeline designed to download and analyse the information from PanelApp Web Applications. </h1>
+<h1> Vigelint - The Variants in Gene Linking Tool </h1>
+
+***Vigelint is composed of:***
+1. PADA-WAN 2.0
+2. CVPO
+3. JEDI
 
 *** PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN) *** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)
 
