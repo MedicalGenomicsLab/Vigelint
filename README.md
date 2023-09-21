@@ -5,7 +5,7 @@ Vigelint makes it possible to determine how our understanding of the molecular c
 ![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/b83900f9-cf7d-4ab7-b410-7209ce9dafbe)
 
 ***Vigelint is composed of:***
-1. PADA-WAN 2.0
+1. [PADA-WAN 2.0](#PADA-WAN)
 2. CVPO
 3. JEDI
 
@@ -13,9 +13,10 @@ This document will describe how to run each part of the Vigelint Pipeline.
 
 ---
 
-<h2>PanelApp Downloader, Analyser - Web Application Navigator Version 2 (PADA-WAN) </h2> 
+#PADA-WAN
+PanelApp Downloader, Analyser - Web Application Navigator Version 2 (PADA-WAN)
 
-*** PADAWAN is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)***
+PADAWAN is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)
 
 - [System requirements](#system-requirements)
   - [Python dependencies](#python-dependencies)
