@@ -1,11 +1,17 @@
 <h1> Vigelint - The Variants in Gene Linking Tool </h1>
 
+Vigelint makes it possible to determine how our understanding of the molecular components associated with a disease are changing. This is achieved by characterising how the genes associated with the disease change and how the variants within those genes change. To achieve this, Vigelint uses the information captured by PanelApp and ClinVar. While Vigelint was used to describe the changes in the epilespy, it can be used to characterise the changes in any panel from PanelApp / PanelApp Australia, or any static gene list. An overview of the tools that make up Vigelint is shown in Figure 1.
+
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/6f0ce669-dd64-43bb-9689-10f61dbdd996)
+
 ***Vigelint is composed of:***
 1. PADA-WAN 2.0
 2. CVPO
 3. JEDI
 
-<h2>PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN) </h2> 
+This document will describe how to run each part of the Vigelint Pipeline. 
+
+<h2>PanelApp Downloader, Analyser - Web Application Navigator Version 2 (PADA-WAN) </h2> 
 
 *** PADAWAN is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)***
 
