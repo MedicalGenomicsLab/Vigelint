@@ -1,137 +1,78 @@
-<h1> Vigelint - The Variants in Gene Linking Tool </h1>
+# CVPO
 
-Vigelint makes it possible to determine how our understanding of the molecular components associated with a disease are changing. This is achieved by characterising how the genes associated with the disease change and how the variants within those genes change. To achieve this, Vigelint uses the information captured by PanelApp and ClinVar. While Vigelint was used to describe the changes in the epilespy, it can be used to characterise the changes in any panel from PanelApp / PanelApp Australia, or any static gene list. An overview of the tools that make up Vigelint is shown in Figure 1.
+This document describes how to run the ClinVar Peroid Organiser (CVPO). CVPO takes renamed genes specific summary files from ClinVar and combines them into queryable matrixes. These matrixes provide efficient means to lookup how the variants associated with a gene change over time.
 
-![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/b83900f9-cf7d-4ab7-b410-7209ce9dafbe)
+A simplified version of the approach used by CVPO is shown in Figure 1.
 
-***Vigelint is composed of:***
-1. [PADA-WAN 2.0](#PADA-WAN)
-2. CVPO
-3. JEDI
+[Figure 1]
 
-This document will describe how to run each part of the Vigelint Pipeline. 
+**CVPO is performed in two stages.** One stage is run manually, and the other stage is run computationally. The the activities in each of these stages is shown in Figure 2.
 
----
+[Figure 2]
 
-#PADA-WAN
-PanelApp Downloader, Analyser - Web Application Navigator Version 2 (PADA-WAN)
+## Stage 1 - Collecting Variant Information 
 
-PADAWAN is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)
-
-- [System requirements](#system-requirements)
-  - [Python dependencies](#python-dependencies)
-  - [R dependencies](#r-dependencies)
-  
-- [PADA-WAN Overview ](#padawan-overview)
-- [PADA-WAN Components](#padawan-components)
-
-
-# System requirements
-PADA-WAN requires Python/3.9.13, and R/3.5.0 .
-
-PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
-
-## Python dependencies
-- pandas 1.1.5
-- numpy 1.19.5
-- argparse
-- re
-- requests
-- time
-- datetime 
-
-## R dependencies
-- ggplot2 
-
-# PADA-WAN Overview 
- 
- PADA-WAN is made of two parts. 
- 
- ***Part 1*** is responsible for downloading and summarising the information from PanelApp
- 
- ***Part 2*** focuses on characterising change and an option set of R scripts makes it possible to visualise these changes
-
-# PADA-WAN Components
-
-This section describes the individal scripts that make up PADA-WAN.
- 
-## 1.1 - Download IDs
-
-The first script in the PADA-WAN pipeline queries the PanelApp / PanelApp Australia API to retrieve a list containing all available panels. In addition to this informaiton, this script also collects information about each panel’s numeric panel-ID, and super panel / rare-disease status. Information about the most current version, the date of release of this version and the number of genetic entities are also downloaded. 
-
-This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. 
-
-An example of the parameter file can be found in /PADA-WAN/1-1/
-
-To run this script use following command:
-  python3 1-1_Downlad-IDs.py --file-path parameters_file.txt
-
-If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
-
-## 1.2 - Panel Downloader
-
-This script takes each of the panels in the listed in the output file from the Download IDs script (1.1,) and uses this information to download begin to download individual panels from the PanelApp / PanelApp Australia API. 
-
-There are some things to note about this approach:
-
-1. As PanelApp uses both minor and major releases, and there is a large in the number of minor releases before a major release we developed a system to accoutn for this variability. To ensure that that every possible version of a panel was downloaded, this script systematically attempt to download every version from 0.0 until the current release.If a specific minor version of this panel was not available, the script skips it and attempts to download the next minor release of the panel. If the script was unable to download ten consecutive minor versions of panel, the script assumes that there are no more minor releases associated with this major version, and moves to next major release of the panel. If the script failed to download the version of the panel listed in the ID file, a warning file is produced.
-2. In addition to processing every available version of a panel, this script also produces a summary file, that contains the number of genes as well as the total number of genes in a specific version of panel.
-3. As the information from PanelApp is stored in the JSON format, it can be challenging for people to access this information.To make this information more accessible, it is stored here as a tab delimited text file. 
-
-This script also requires a parameters file. This file contains the location of the ID file produced by 1.1 as well as the tokens for both PanelApp Australia and the Genomics England instance of the resource.
-
-Two example of the parameter files can be found in /PADA-WAN/1-2/
-
-This script is run using the following command:
-  python3 1-2_PanelDownloader.py --file-path parameters_file.txt
-
-## 1.3 - Panel Summariser
-
-The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month.
-
-This script also requires a parameters file. This file contains the location the files produced by 1.2.
-
-An example of the parameter file can be found in /PADA-WAN/1-3/
-
-This script is run using the following command:
-  python3 1-3_PanelSummariser.py --file-path parameters_file.txt
-
-## 1.4 - Panel Factoriser 
-
-The matrices script, opens the monthly summary file for each panel and combines this information into a matrix for a specific variable (no. of releases, no. of genes, no. of diagnostic genes, etc). For example, this script produces an output file that shows number of releases there was been for each panel, over the space of each month.
-
-This script also requires a parameters file. 
-
-An example of the parameter file can be found in /PADA-WAN/1-4/
-
-This script is run using the following command:
-  python3 1-4_PanelFactoriser.py --file-path parameters_file.txt
-
-## 2.1 - Characterise Gene Changes
-
-The other series of scripts, describes the process of determining the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. 
-
-This script also requires a parameters file. 
-
-An example of the parameter file can be found in /PADA-WAN/2-1/
-
-This script is run using the following command:
-  python3 2-1_CharacteriseGeneChanges.py --file-path parameters_file.txt
-
-## 2.2 - Determine Cumulative Gene Changes
-
-This script also requires a parameters file. 
-
-An example of the parameter file can be found in /PADA-WAN/2-2/
-
-This script is run using the following command:
-  python3 2-2_CumulativeGeneChanges.py --file-path parameters_file.txt
-_____
-
-## 2.3 - Visualisations
-
+**Requirements**
+* An internet connection 
+* A method to unzip gzip files 
 
 ---
+**Collecting and Processing the Data**
+
+1. **Navigate to https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/**
+
+*Note*  it is possible to manually navigate to these files. This can be achieved by going to https://ftp.ncbi.nlm.nih.gov/pub/clinvar/, then selecting the **tab_delimited** option, then selecting the **archive** option
+
+2. **Download (an unzip) the gene specific summary files for each month you want to test**
+
+Each gene specific summary file will be available as a gzipped tab delimited text file. It is important to note that while the gzip file contains the date in the file name, the unzipped file does not. 
+
+For example if you wish to download the gene specific summary file for March 2020, you will need to download the file labelled 'gene_specific_summary_2020-03.txt.gz'
 
 
+3. **Rename each unzipped gene specific summary file**
 
+As the unzipped files do not contain information about the time period they represent in their filenames, we have designed this renaming process an oppuruntity to complete a number of important tasks. These important tasks include
+
+ - Before a file is re-named we recommend opening the file and confirming the date matches the assumed date
+ - The correct name ensures that stage 2 of CVPO will properly ingest the variant files 
+	 - for the correct format for each gene specific summary file is:
+		 -  [YEAR]_[MONTH]-gene_specific_summary.txt
+		 - *i.e. 2023_09-gene_specific_summary.txt*
+
+
+ - Standardise time formats 
+	 - PADA-WAN defines the version of a panel present at 11:59pm on the last day of the month to be the monthly representative for that panel
+	 - ClinVar is not as strict with times, and *usually* defines a monthly summary as a date within a few days of the start of the month. For example, the Gene Specific Summary File for March 2020 was released on the 2nd of March 2020, while the Gene Specific Summary file for Jan 2020, was released on the 31st of December 2019
+	- **As ClinVar and PADA-WAN détermine months differently (Start of month and end of month respectively), we recommend adopting a single approach to times**
+	- To convert a ClinVar date to a PADA-WAN date, you simply move the month back by one. For example the January 2020 gene specific summary file, should be renamed to be the December 2019 Gene Specific Summary file 
+	- Even if you aren't planning on comparing the information in these files to the information in PanelApp, it is recommended that people adopt a similar date system to the PADA-WAN, as this tool was written to expect PADA-WAN dates
+
+
+## Stage 2 - Running CVPO
+
+**Requirements**
+* Python 
+	* argparse
+	* re
+	* time
+	* pandas
+* R
+	* xx
+
+* A file containing both Ensembl-IDs to NCBI-IDs for each gene that has both
+
+**Running CVPO**
+
+CVPO is run using the following command.
+
+    python3 cvpo.py --file-path cvpo_params.txt
+
+In order to run CVPO you will require a parameters file. An example parameters file is provided, as is, an example PBS script. The parameters file contains the following information:
+1. Experiment Name
+2. End Year
+3. End Month
+4. Location of the NCBI/ENSG-ID file 
+5. name of the NCBI/ENSG-ID file 
+6. Location of the gene specific summary files 
+7. Location of the out-put files
