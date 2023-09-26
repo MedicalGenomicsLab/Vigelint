@@ -4,11 +4,13 @@ This document describes how to run the ClinVar Peroid Organiser (CVPO). CVPO tak
 
 A simplified version of the approach used by CVPO is shown in Figure 1.
 
-[Figure 1]
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/5350d9b0-2fb1-41f9-ba2d-3e7e845e3ba2)
+
 
 **CVPO is performed in two stages.** One stage is run manually, and the other stage is run computationally. The the activities in each of these stages is shown in Figure 2.
 
-[Figure 2]
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/bb4278d0-eaa2-407d-a7c8-dbe9bef316ca)
+
 
 ## Stage 1 - Collecting Variant Information 
 
