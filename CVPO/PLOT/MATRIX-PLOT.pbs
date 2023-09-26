@@ -26,7 +26,7 @@ NAME="Plot ClinVar Changes"
 #Define location of the script / param files
 RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/CVPO/GIT/PLOT"
 #Define script
-SCRIPT="2023-09-14_ClinVarChanges.R"
+SCRIPT="PlotChangesInClinVar.R"
 #Define parameters file
 PARAM="plot-params.txt"
 
