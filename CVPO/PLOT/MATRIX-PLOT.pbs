@@ -1,0 +1,79 @@
+#!/bin/bash
+
+#PBS -N ClinVar_Visualise
+#PBS -r n
+#PBS -l walltime=2:00:00
+#PBS -l ncpus=2,mem=10Gb
+#PBS -m ae
+#PBS -M Alan.Robertson@qimrberghofer.edu.au 
+#PBS -o /mnt/backedup/home/alanR/experiments/log/clinvar
+#PBS -e /mnt/backedup/home/alanR/experiments/log/clinvar
+
+#-------------------------------------
+# 
+# Script:	Plot the variants in ClinVar
+# Summary:	This script was designed to run a python script that ingests the results from PanelApp, and characterises how those panels have changed
+# Created: 	2023-09-14
+# 
+#-------------------------------------
+
+#-------------------------------------------
+# Part 1: Enter the variables here 
+#------------------------------------------
+
+#Name experiment
+NAME="Plot ClinVar Changes" 
+#Define location of the script / param files
+RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/CVPO/GIT/PLOT"
+#Define script
+SCRIPT="2023-09-14_ClinVarChanges.R"
+#Define parameters file
+PARAM="plot-params.txt"
+
+#------------------------------------------------
+
+echo "Experiment name: ${NAME}"  
+echo "Parameter file: ${PARAM}"
+echo ""
+
+#Extract the version of PanelApp being used from the params file 
+ARG1=$(less ${RAW_LOC}/${PARAM} | awk '/R-PLOT_1/ {print $2}')
+ARG2=$(less ${RAW_LOC}/${PARAM} | awk '/R-PLOT_2/ {print $2}')
+ARG3=$(less ${RAW_LOC}/${PARAM} | awk '/R-PLOT_3/ {print $2}')
+echo "ARG1 = ${ARG1}"
+echo "ARG2 = ${ARG2}"
+echo "ARG3 = ${ARG3}"
+sleep 3
+echo""
+
+#LOCATION=${ARG1}
+
+#save additional information with logs
+LOG_DIR="/mnt/backedup/home/alanR/experiments/log/clinvar"
+timestamp=$(date "+%Y-%m-%d_%H-%M")
+cp ${RAW_LOC}/${PARAM} ${LOG_DIR}/${timestamp}_3b_${PARAM}
+
+#Load Modules
+module load R/4.2.0
+echo "Modules loaded:"
+module list
+echo ""
+
+#Define proxy (ensure cluster can connect to websites outside of QIMR)
+#source ~/.proxy
+
+#Define the  working directory
+echo "Moving to:"
+cd ${ARG1}
+pwd
+
+#-------------------------------------------
+# Part 2: Running the tool 
+#------------------------------------------
+echo "VISUALISING GENE CHANGES"
+
+Rscript ${RAW_LOC}/${SCRIPT} ${ARG1} ${ARG2} ${ARG3}
+#echo ""
+
+#echo "Files Produced:"
+#ls

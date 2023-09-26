@@ -1,0 +1,28 @@
+##VAR	VALUE
+EXP_NAME:	CVPO
+END_YEAR:	2023
+END_MONTH:	08
+NCBI2ENSG_DIR:	/working/lab_nicw/alanR
+NCBI2ENSG_NAME:	2023-05-16_Entrez2Ensembl.txt
+GSS_LOC:	/working/lab_nicw/alanR/CLINVAR
+OUT_LOC:	/working/lab_nicw/alanR/Vigelint/VARIANT-MATRIX
+
+R-PLOT_1:	/working/lab_nicw/alanR/Vigelint/VARIANT-MATRIX/
+R-PLOT_2:	August2023_CLINVAR-full-matirx.txt
+R-PLOT_3:	2023-08
+
+###
+
+IN_DIR_AU:	/working/lab_nicw/alanR/PANELAPP/AU/PANELS
+OUTDIR_AU:	/working/lab_nicw/alanR/PANELAPP/AU/PANELS/_MONTHLY_SUMMARY
+IN_DIR_UK:      /working/lab_nicw/alanR/PANELAPP/UK/PANELS
+OUTDIR_UK:      /working/lab_nicw/alanR/PANELAPP/UK/PANELS/_MONTHLY_SUMMARY
+AU_LAUNCH:	2019, 10, 1
+UK_LAUNCH:	2017, 1, 1
+UK_EPIL:	2018, 4, 1
+
+
+
+
+
+

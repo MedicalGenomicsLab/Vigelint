@@ -1,0 +1,77 @@
+#!/bin/bash
+
+#PBS -N ClinVar_CreateVariantMatrix 
+#PBS -r n
+#PBS -l walltime=2:00:00
+#PBS -l ncpus=2,mem=10Gb
+#PBS -m ae
+#PBS -M Alan.Robertson@qimrberghofer.edu.au 
+#PBS -o /mnt/backedup/home/alanR/experiments/log/clinvar
+#PBS -e /mnt/backedup/home/alanR/experiments/log/clinvar
+
+#-------------------------------------
+# 
+# Script:	3-1 ClinVar: Create Variant Matrix
+# Summary:	This script was designed to run a python script that takes all the gene specific summary files from ClinVar and merges them together to create a series of matrixes showing how the variants for each change over time 
+# Created: 	2023-09-05
+# 
+#-------------------------------------
+
+#-------------------------------------------
+# Part 1: Enter the variables here 
+#------------------------------------------
+
+#Name experiment
+NAME="CLINVAR - CREATE VARIANT MATRIX" 
+#Define location of the script / param files
+RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/CVPO/GIT"
+#Define script
+SCRIPT="CVPO.py"
+#Define parameters file
+PARAM="cvpo_params.txt"
+
+#------------------------------------------------
+
+echo "Experiment name: ${NAME}"  
+echo "Parameter file: ${PARAM}"
+echo ""
+
+#Extract key information from the params file to store in the log  
+#VERSION=$(less ${RAW_LOC}/${PARAM} | awk '/VER/ {print $2}')
+OUT_DIR=$(less ${RAW_LOC}/${PARAM} | awk '/OUTPUTDIR/ {print $2}')
+#echo "Version = ${VERSION}"
+echo "OUT-DIR = ${OUT_DIR}"
+sleep 5
+echo""
+
+#save additional information with logs
+LOG_DIR="/mnt/backedup/home/alanR/experiments/log/clinvar"
+timestamp=$(date "+%Y-%m-%d_%H-%M")
+cp ${RAW_LOC}/${PARAM} ${LOG_DIR}/${timestamp}_3-1_${PARAM}
+
+#Load Modules
+module load python/3.9.13 
+echo "Modules loaded:"
+module list
+echo ""
+
+#Define proxy (ensure cluster can connect to websites outside of QIMR)
+#source ~/.proxy
+
+#Define the  working directory
+OUTPUT_DIR=${OUT_DIR}
+mkdir -p ${OUTPUT_DIR}
+echo "Moving to:"
+cd ${OUTPUT_DIR}
+pwd
+#sleep 5
+
+#-------------------------------------------
+# Part 2: Running the tool 
+#------------------------------------------
+echo "DETERMINING GENE CHANGES"
+python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
+#echo ""
+
+#echo "Files Produced:"
+#ls

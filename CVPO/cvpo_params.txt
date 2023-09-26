@@ -1,0 +1,23 @@
+##VAR	VALUE
+EXP_NAME:	August2023
+END_YEAR:	2023
+END_MONTH:	08
+NCBI2ENSG_DIR:	/working/lab_nicw/alanR
+NCBI2ENSG_NAME:	2023-05-16_Entrez2Ensembl.txt
+GSS_LOC:	/working/lab_nicw/alanR/CLINVAR
+OUT_LOC:	/working/lab_nicw/alanR/Vigelint/VARIANT-MATRIX
+###
+
+
+
+
+
+
+
+
+
+
+
+
+
+
