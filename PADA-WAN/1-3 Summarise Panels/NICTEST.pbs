@@ -1,0 +1,79 @@
+#!/bin/bash
+
+#PBS -N PanelApp_Panel_Summariser 
+#PBS -r n
+#PBS -l walltime=2:00:00
+#PBS -l ncpus=2,mem=10Gb
+#PBS -m ae
+#PBS -M Alan.Robertson@qimrberghofer.edu.au 
+#PBS -o /mnt/backedup/home/alanR/experiments/log/panelapp
+#PBS -e /mnt/backedup/home/alanR/experiments/log/panelapp
+
+#-------------------------------------
+# 
+# Script:	1-3 Download PanelApp IDs 
+# Summary:	This script was designed to run a python script that summarises all the different versions of a panel into monthly summaries 
+# Created: 	2023-05-03
+# 
+#-------------------------------------
+
+#-------------------------------------------
+# ENTER YOUR DEETS
+#------------------------------------------
+
+#Name experiment
+NAME="PANELAPP PANEL SUMMARIZER" 
+#Define vars
+SCRIPT="1-3_SummarisePanels.py"
+RSCRIPT="PlotMonthlyChanges.R"
+RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/PADA-WAN/1-3/GIT"
+#Define parameters file
+PARAM="1-3_params.txt"
+
+echo "Experiment name: ${NAME}"  
+echo "Parameter file: ${PARAM}"
+echo ""
+
+#Extract the version of PanelApp being used from the params file 
+OUT_DIR=$(less ${RAW_LOC}/${PARAM} | awk '/OUTPUTDIR/ {print $2}')
+PLOTDIR=$(less ${RAW_LOC}/${PARAM} | awk '/PLOT_DIR/ {print $2}')
+echo "Monthly Summary Location = ${OUT_DIR}"
+echo "Plot Location : ${PLOTDIR}"
+echo""
+
+#save additional information with logs
+LOG_DIR="/mnt/backedup/home/alanR/experiments/log/panelapp"
+timestamp=$(date "+%Y-%m-%d_%H-%M")
+cp ${RAW_LOC}/${PARAM} ${LOG_DIR}/${timestamp}_1-3_${PARAM}
+
+#Load Modules
+module load python/3.9.13 
+module load R/4.2.0
+echo "Modules loaded:"
+module list
+echo ""
+
+#Define proxy (ensure cluster can connect to websites outside of QIMR)
+#source ~/.proxy
+
+#Define the  working directory
+OUTPUT_DIR=${OUT_DIR}
+mkdir -p ${OUTPUT_DIR}
+echo "Moving to:"
+cd ${OUTPUT_DIR}
+pwd
+#sleep 5
+
+#-------------------------------------------
+# Part 2: Running the tool 
+#------------------------------------------
+echo "PRODUCING MONTHLY SUMMARIES FOR PANELAPP ${VERSION}"
+#echo "DOWNLOADING THE PANELS LISTED IN: ${ID_FILE}"
+
+#python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
+#echo ""
+
+Rscript ${RAW_LOC}/${RSCRIPT} ${OUTPUT_DIR} ${PLOTDIR}
+
+#echo "Files Produced:"
+#ls

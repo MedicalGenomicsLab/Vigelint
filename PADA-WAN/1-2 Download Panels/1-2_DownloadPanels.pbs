@@ -1,0 +1,84 @@
+#!/bin/bash
+
+#PBS -N PanelApp_Panel_Download 
+#PBS -r n
+#PBS -l walltime=48:00:00
+#PBS -l ncpus=2,mem=10Gb
+#PBS -m ae
+#PBS -M Alan.Robertson@qimrberghofer.edu.au 
+#PBS -o /mnt/backedup/home/alanR/experiments/log/panelapp
+#PBS -e /mnt/backedup/home/alanR/experiments/log/panelapp
+
+#-------------------------------------
+# 
+# Script:	1-2 Download PanelApp IDs 
+# Summary:	This script was designed to run a python script that takes a list of panels and downloads every version of very panel listed in that file 
+# Created: 	2023-05-02
+# 
+#-------------------------------------
+
+#-------------------------------------------
+# Enter your info here 
+#------------------------------------------
+
+#Name experiment
+NAME="PANELAPP PANEL DOWNLOADER" 
+#Define location
+SCRIPT="1-2_PanelDownloader.py"
+RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/PADA-WAN/1-2/GIT"
+#Define parameters file
+PARAM="1-2_params.txt"
+#PARAM="1-2_download_params_au.txt"
+#PARAM="1-2_download_params_uk.txt"
+
+echo "Experiment name: ${NAME}"  
+echo "Parameter file: ${PARAM}"
+echo ""
+
+#Extract the version of PanelApp being used from the params file 
+VERSION=$(less ${RAW_LOC}/${PARAM} | awk '/VER/ {print $2}')
+ID_FILE=$(less ${RAW_LOC}/${PARAM} | awk '/ID/ {print $2}')
+
+echo "Version = ${VERSION}"
+echo""
+
+#Determine the right output location 
+[${VERSION}=='UK']; OUTPUT_DIR=$(less ${RAW_LOC}/${PARAM} | awk '/OUTDIR_UK/ {print $2}')
+
+[${VERSION}=='AU']; OUTPUT_DIR=$(less ${RAW_LOC}/${PARAM} | awk '/OUTDIR_AU/ {print $2}')
+
+echo "OUTPUT_DIR = ${OUTPUT_DIR}"
+echo ""
+
+#save additional information with logs
+LOG_DIR="/mnt/backedup/home/alanR/experiments/log/panelapp"
+timestamp=$(date "+%Y-%m-%d_%H-%M")
+cp ${RAW_LOC}/${PARAM} ${LOG_DIR}/${timestamp}_1-2_${PARAM}
+
+#Load Modules
+module load python/3.9.13 
+echo "Modules loaded:"
+module list
+echo ""
+
+#Define proxy (ensure cluster can connect to websites outside of QIMR)
+source ~/.proxy
+
+#Define the  working directory
+#OUTPUT_DIR="/working/lab_nicw/alanR/PANELAPP/${VERSION}/PANELS"
+mkdir -p ${OUTPUT_DIR}
+echo "Moving to:"
+cd ${OUTPUT_DIR}
+pwd
+#sleep 5
+
+#-------------------------------------------
+# Part 2: Running the tool 
+#------------------------------------------
+echo "CONNECTION TO PANELAPP ${VERSION}"
+echo "DOWNLOADING THE PANELS LISTED IN: ${ID_FILE}"
+python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
+#echo ""
+
+#echo "Files Produced:"
+#ls

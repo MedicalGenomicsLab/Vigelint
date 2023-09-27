@@ -1,0 +1,11 @@
+##VAR	VALUE
+INDIVIDUAL_RUN:	AU	#Select either the Genomics England instance (UK) or PanelApp Australia (AU)
+###
+OUT-DIRAU:	/working/lab_nicw/alanR/Vigelint/IDS	#Define the directory for the output file from PanelApp AUS
+PATH_AU:	https://panelapp.agha.umccr.org/api/v1/panels/?page=
+TOKEN_AU:	PSgeKIwkDKU2Kt9LVAeDEFoLz2FE8UpKeACrS4uUi6rri8shbemDNv1oWHzD4bp0
+OUT-DIRUK:	/working/lab_nicw/alanR/Vigelint/IDS	
+PATH_UK:	https://panelapp.genomicsengland.co.uk/api/v1/panels/?page=
+TOKEN_UK:	VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7
+
+

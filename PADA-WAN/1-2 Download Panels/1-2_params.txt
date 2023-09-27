@@ -1,0 +1,13 @@
+##VAR	VALUE
+PANELAPP_VERSN:	UK	#Select either the Genomics England instance (UK) or PanelApp Australia (AU)
+ID_LOCATION:	/working/lab_nicw/alanR/Vigelint/IDS/2023-09-25_14-13_PA-UK_Panel_IDs.tsv	
+###
+OUTDIR_AU:	/working/lab_nicw/alanR/Vigelint/PANELS/AU/INDIVIDUAL_PANELS
+PATH_AU:	https://panelapp.agha.umccr.org/api/v1/panels/
+TOKEN_AU:	PSgeKIwkDKU2Kt9LVAeDEFoLz2FE8UpKeACrS4uUi6rri8shbemDNv1oWHzD4bp0
+OUTDIR_UK:	/working/lab_nicw/alanR/Vigelint/PANELS/UK/INDIVIDUAL_PANELS
+PATH_UK:	https://panelapp.genomicsengland.co.uk/api/v1/panels/
+TOKEN_UK:	VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7
+###
+
+
