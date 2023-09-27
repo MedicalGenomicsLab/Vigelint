@@ -1,6 +1,20 @@
-<h1> PADA-WAN: A pipeline designed to download and analyse the information from PanelApp Web Applications. </h1>
+<h1> PADA-WAN 2.0: A pipeline designed to download and analyse the information from PanelApp Web Applications. </h1>
 
 *** PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN) *** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023)
+
+This is the updated version of PADA-WAN. This version replaces the version listed in the PanelApp-Pipeline.
+
+An overview of PADA-WAN can be seen in Figure 1 and Figure 2.
+
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/29cf14e9-5a12-4b3b-8755-1e55c1f593ff)
+
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/cec928ed-48c7-44c9-969d-cc8890732f82)
+
+
+
+---
+
+
 
 - [System requirements](#system-requirements)
   - [Python dependencies](#python-dependencies)
@@ -11,7 +25,7 @@
 
 
 # System requirements
-PADA-WAN requires Python/3.9.13, and R/3.5.0 .
+PADA-WAN requires Python/3.9.13, and R/4.2.0 .
 
 PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
 
@@ -25,7 +39,10 @@ PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a clust
 - datetime 
 
 ## R dependencies
-- ggplot2 
+- ggplot2
+- readxl
+- tidyr
+- stringr
 
 # PADA-WAN Overview 
  
