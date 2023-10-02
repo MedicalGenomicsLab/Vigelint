@@ -66,7 +66,7 @@ To run this script use following command:
 
   <python3 1-1_Downlad-IDs.py --file-path parameters_file.txt>
 
-  CODE BLOCK
+  To run this script use the following commands:
 
     Example code
 
