@@ -68,7 +68,7 @@ To run this script use following command:
 
   To run this script use the following commands:
 
-    Example code
+    Example python3 1-1_Downlad-IDs.py --file-path parameters_file.txt code
 
 
 If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
