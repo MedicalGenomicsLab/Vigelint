@@ -1,0 +1,84 @@
+#!/bin/bash
+
+#PBS -N PanelApp_CumulativeChange 
+#PBS -r n
+#PBS -l walltime=2:00:00
+#PBS -l ncpus=2,mem=10Gb
+#PBS -m ae
+#PBS -M Alan.Robertson@qimrberghofer.edu.au 
+#PBS -o /mnt/backedup/home/alanR/experiments/log/panelapp
+#PBS -e /mnt/backedup/home/alanR/experiments/log/panelapp
+
+#-------------------------------------
+# 
+# Script:	2-2 Determine the Cumulative Gene Changes from PanelApp Data
+# Summary:	This script was designed to run a python script that ingests the results from PanelApp, and characterises how those panels have changed
+# Created: 	2023-05-05
+# 
+#-------------------------------------
+
+#-------------------------------------------
+# Part 1: Enter the variables here 
+#------------------------------------------
+
+#Name experiment
+NAME="PANELAPP CUMULATIVE GENE CHANGES" 
+#Define location of the script / param files
+RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/PADA-WAN/2-2/GIT"
+#Define script
+SCRIPT="2-2_CumulativeChanges.py"
+#Define parameters file
+PARAM="combined_params.txt"
+#Define R script
+RSCRIPT="2-3_PlotChanges.R"
+#------------------------------------------------
+
+echo "Experiment name: ${NAME}"  
+echo "Parameter file: ${PARAM}"
+echo ""
+
+#Extract the version of PanelApp being used from the params file 
+EXP_NAME=$(less ${RAW_LOC}/${PARAM} | awk '/EXP_NAME/ {print $2}')
+OUT_DIR=$(less ${RAW_LOC}/${PARAM} | awk '/OUTPUTDIR/ {print $2}')
+PLOTDIR=$(less ${RAW_LOC}/${PARAM} | awk '/PLOT/ {print $2}')
+echo "Experiment= ${EXP_NAME}"
+echo "OUT-DIR = ${OUT_DIR}"
+echo "PLOT OUTPUT = ${PLOTDIR}" 
+sleep 2
+echo""
+
+#save additional information with logs
+LOG_DIR="/mnt/backedup/home/alanR/experiments/log/panelapp"
+timestamp=$(date "+%Y-%m-%d_%H-%M")
+cp ${RAW_LOC}/${PARAM} ${LOG_DIR}/${timestamp}_2-1_${PARAM}
+
+#Load Modules
+module load python/3.9.13 
+module load R/4.2.0
+echo "Modules loaded:"
+module list
+echo ""
+
+#Define proxy (ensure cluster can connect to websites outside of QIMR)
+#source ~/.proxy
+
+#Define the  working directory
+OUTPUT_DIR="${OUT_DIR}"
+mkdir -p ${OUTPUT_DIR}
+echo "Moving to:"
+cd ${OUTPUT_DIR}
+#mkdir -p ${EXP_NAME}
+#cd ${EXP_NAME}
+pwd
+#sleep 5
+
+#-------------------------------------------
+# Part 2: Running the tool 
+#------------------------------------------
+echo "DETERMINING CUMULATIVE GENE CHANGES"
+#python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
+#echo ""
+echo "GENE CHANGES ANALYSED, BEGINNING PLOTING"
+Rscript ${RAW_LOC}/${RSCRIPT} ${OUT_DIR} ${PLOTDIR}
+#echo "Files Produced:"
+#ls
