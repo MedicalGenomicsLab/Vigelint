@@ -66,7 +66,7 @@ An example of the parameter file can be found in /PADA-WAN/1-1/
 
   To run this script use the following commands:
 
-    python3 1-1_Downlad-IDs.py --file-path parameters_file.txt
+    python3 1-1_DownladIDs.py --file-path parameters_file.txt
 
 
 If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
@@ -92,7 +92,7 @@ Two example of the parameter files can be found in /PADA-WAN/1-2/
 
   To run this script use the following commands:
 
-    python3 1-2_Downlad-IDs.py --file-path parameters_file.txt
+    python3 1-2_PanelDownloader.py --file-path parameters_file.txt
 
   _Notes on 1-2_
 1. When preparing the parameters file, please ensure that there is no trailing white space.
@@ -101,14 +101,18 @@ Two example of the parameter files can be found in /PADA-WAN/1-2/
 
 ## 1.3 - Panel Summariser
 
-The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month.
+The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a monthly summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month. This output from this script is very important to the following analyses. 
 
 This script also requires a parameters file. This file contains the location the files produced by 1.2.
 
 An example of the parameter file can be found in /PADA-WAN/1-3/
 
-This script is run using the following command:
-  python3 1-3_PanelSummariser.py --file-path parameters_file.txt
+  To run this script use the following commands:
+
+    python3 1-3_SummarisePanels.py --file-path parameters_file.txt
+
+  _Notes on 1-3_
+1. When preparing the parameters file, please ensure that there is no trailing white space.
 
 ## 1.4 - Panel Factoriser 
 
