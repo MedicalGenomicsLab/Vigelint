@@ -83,7 +83,8 @@ There are some things to note about this approach:
 
 1. As PanelApp uses both minor and major releases, and there is a large in the number of minor releases before a major release we developed a system to accoutn for this variability. To ensure that that every possible version of a panel was downloaded, this script systematically attempt to download every version from 0.0 until the current release.If a specific minor version of this panel was not available, the script skips it and attempts to download the next minor release of the panel. If the script was unable to download ten consecutive minor versions of panel, the script assumes that there are no more minor releases associated with this major version, and moves to next major release of the panel. If the script failed to download the version of the panel listed in the ID file, a warning file is produced.
 2. In addition to processing every available version of a panel, this script also produces a summary file, that contains the number of genes as well as the total number of genes in a specific version of panel.
-3. As the information from PanelApp is stored in the JSON format, it can be challenging for people to access this information.To make this information more accessible, it is stored here as a tab delimited text file. 
+3. As the information from PanelApp is stored in the JSON format, it can be challenging for people to access this information.To make this information more accessible, it is stored here as a tab delimited text file.
+4. If you only want to investigate a specific panel, you can edit the ID file produced by 1-1, and remove the panels you do not wish to download.
 
 This script also requires a parameters file. This file contains the location of the ID file produced by 1.1 as well as the tokens for both PanelApp Australia and the Genomics England instance of the resource.
 
