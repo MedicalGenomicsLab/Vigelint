@@ -12,8 +12,8 @@
 #-------------------------------------
 # 
 # Script:	1-3 Download PanelApp IDs 
-# Summary:	This script was designed to run a python script that summarises all the different versions of a panel into monthly summaries 
-# Created: 	2023-05-03
+# Summary:	This script was revised to run a python script that summarises all the different versions of a panel into monthly summaries, and plot these changes
+# Created: 	2023-09-07
 # 
 #-------------------------------------
 
