@@ -110,10 +110,11 @@ An example of the parameter file can be found in /PADA-WAN/1-3/
   To run this script use the following commands:
 
     python3 1-3_SummarisePanels.py --file-path parameters_file.txt
-    Rscript PlotMonthlyChanges.R 
+    Rscript PlotMonthlyChanges.R [DIRECTORY CONTAIN MONTHLY SUMMARIES] [DIRECTORY FOR PLOTS]
 
   _Notes on 1-3_
 1. When preparing the parameters file, please ensure that there is no trailing white space.
+2. It is not require to plot the monthly changes, but I find it to be helpful
 
    
 
