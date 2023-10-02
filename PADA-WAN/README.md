@@ -63,7 +63,7 @@ This script requires a parameters file, which contains information about the ver
 An example of the parameter file can be found in /PADA-WAN/1-1/
 
 To run this script use following command:
-  <python3 1-1_Downlad-IDs.py --file-path parameters_file.txt?
+  < python3 1-1_Downlad-IDs.py --file-path parameters_file.txt >
 
 
 If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
