@@ -71,9 +71,9 @@ An example of the parameter file can be found in /PADA-WAN/1-1/
 
 If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
 
-_Notes_
+_Notes on 1-1_
 1. When preparing the parameters file, please ensure that there is no trailing white space.
-2. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
+
 
 ## 1.2 - Panel Downloader
 
@@ -89,8 +89,14 @@ This script also requires a parameters file. This file contains the location of 
 
 Two example of the parameter files can be found in /PADA-WAN/1-2/
 
-This script is run using the following command:
-  python3 1-2_PanelDownloader.py --file-path parameters_file.txt
+  To run this script use the following commands:
+
+    python3 1-2_Downlad-IDs.py --file-path parameters_file.txt
+
+  _Notes on 1-2_
+1. When preparing the parameters file, please ensure that there is no trailing white space.
+2. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
+
 
 ## 1.3 - Panel Summariser
 
