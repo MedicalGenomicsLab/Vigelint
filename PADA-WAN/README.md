@@ -122,8 +122,13 @@ This script also requires a parameters file.
 
 An example of the parameter file can be found in /PADA-WAN/1-4/
 
-This script is run using the following command:
-  python3 1-4_PanelFactoriser.py --file-path parameters_file.txt
+  To run this script use the following commands:
+
+    python3 1-4_FactorisePanels.py --file-path parameters_file.txt
+    
+_Notes on 1-4_
+This script is not required for the Vigilent Pipeline, however it has been included here, because the prior 'PanelApp Pipeline' has been superseeded by this version of the tools.
+    
 
 ## 2.1 - Characterise Gene Changes
 
