@@ -56,15 +56,13 @@ This section describes the individal scripts that make up PADA-WAN.
  
 ## 1.1 - Download IDs
 
-The first script in the PADA-WAN pipeline queries the PanelApp / PanelApp Australia API to retrieve a list containing all available panels. In addition to this informaiton, this script also collects information about each panel’s numeric panel-ID, and super panel / rare-disease status. Information about the most current version, the date of release of this version and the number of genetic entities are also downloaded. 
+The first script in the PADA-WAN pipeline queries the PanelApp API to retrieve a list containing all available panels. In addition to this informaiton, this script also collects information about each panel’s numeric panel-ID, and super panel / rare-disease status. Information about the most current version, the date of release of this version and the number of genetic entities are also downloaded. 
+
+This script has been updated to support both the PanelApp Australia, and the Genomics England Instance of Panel App 
 
 This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. 
 
 An example of the parameter file can be found in /PADA-WAN/1-1/
-
-To run this script use following command:
-
-  <python3 1-1_Downlad-IDs.py --file-path parameters_file.txt>
 
   To run this script use the following commands:
 
@@ -72,6 +70,10 @@ To run this script use following command:
 
 
 If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
+
+_Notes_
+1. When preparing the parameters file, please ensure that there is no trailing white space.
+2. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
 
 ## 1.2 - Panel Downloader
 
