@@ -101,7 +101,7 @@ Two example of the parameter files can be found in /PADA-WAN/1-2/
 
 ## 1.3 - Panel Summariser
 
-The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a monthly summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month. This output from this script is very important to the following analyses. 
+The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a monthly summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month. This output from this script is very important to the following analyses. This script has been updated to automatically produce plots showing the number of genes and diagnostic genes each month of the analysis window,
 
 This script also requires a parameters file. This file contains the location the files produced by 1.2.
 
@@ -110,9 +110,12 @@ An example of the parameter file can be found in /PADA-WAN/1-3/
   To run this script use the following commands:
 
     python3 1-3_SummarisePanels.py --file-path parameters_file.txt
+    Rscript PlotMonthlyChanges.R 
 
   _Notes on 1-3_
 1. When preparing the parameters file, please ensure that there is no trailing white space.
+
+   
 
 ## 1.4 - Panel Factoriser 
 
