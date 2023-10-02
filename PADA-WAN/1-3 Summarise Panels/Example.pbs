@@ -70,7 +70,7 @@ pwd
 echo "PRODUCING MONTHLY SUMMARIES FOR PANELAPP ${VERSION}"
 #echo "DOWNLOADING THE PANELS LISTED IN: ${ID_FILE}"
 
-#python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
+python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
 #echo ""
 
 Rscript ${RAW_LOC}/${RSCRIPT} ${OUTPUT_DIR} ${PLOTDIR}
