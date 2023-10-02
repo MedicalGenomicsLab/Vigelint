@@ -105,7 +105,7 @@ The third script opens the summary file produced by the second script, and, iden
 
 This script also requires a parameters file. This file contains the location the files produced by 1.2.
 
-An example of the parameter file can be found in /PADA-WAN/1-3/
+An example of the parameter file can be found in /PADA-WAN/1-3 Summarise Panels/
 
   To run this script use the following commands:
 
@@ -122,9 +122,7 @@ An example of the parameter file can be found in /PADA-WAN/1-3/
 
 The matrices script, opens the monthly summary file for each panel and combines this information into a matrix for a specific variable (no. of releases, no. of genes, no. of diagnostic genes, etc). For example, this script produces an output file that shows number of releases there was been for each panel, over the space of each month.
 
-This script also requires a parameters file. 
-
-An example of the parameter file can be found in /PADA-WAN/1-4/
+This script also requires a parameters file. An example of the parameter file can be found in /PADA-WAN/1-4 Panel Factoriser/
 
   To run this script use the following commands:
 
@@ -136,24 +134,26 @@ This script is not required for the Vigilent Pipeline, however it has been inclu
 
 ## 2.1 - Characterise Gene Changes
 
-The other series of scripts, describes the process of determining the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. 
+This script determines the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. This script has been upgraded to list the individual genes that have been changed, instead of just determining the number of gene changes. Thanks to those who highlighted this oversight.
 
-This script also requires a parameters file. 
+  To run this script use the following commands:
 
-An example of the parameter file can be found in /PADA-WAN/2-1/
+    python3 2-1_DetermineChange.py --file-path parameters_file.txt
 
-This script is run using the following command:
-  python3 2-1_CharacteriseGeneChanges.py --file-path parameters_file.txt
+  This script also requires a parameters file. An example of the parameter file can be found in /PADA-WAN/2-1 Determine Gene Changes/
 
 ## 2.2 - Determine Cumulative Gene Changes
 
-This script also requires a parameters file. 
+This script determines the cumulative number of gene changes that occur each month of the analysis window. This script has been re-written to make it easier to automatically plot the Gene Changes.
 
-An example of the parameter file can be found in /PADA-WAN/2-2/
+  To run this script use the following commands:
 
-This script is run using the following command:
-  python3 2-2_CumulativeGeneChanges.py --file-path parameters_file.txt
+    python3 2-2_CumulativeChanges.py --file-path parameters_file.txt
+    Rscript PlotChanges.R [DIRECTORY CONTAIN MONTHLY SUMMARIES] [DIRECTORY FOR PLOTS]
+
+  An example of the parameter file can be found in /PADA-WAN/2-2 Cumulative Changes/ - however, there should not be any trailing white space characters after the values of importance.
+    
 _____
 
-## 2.3 - Visualisations
+
 
