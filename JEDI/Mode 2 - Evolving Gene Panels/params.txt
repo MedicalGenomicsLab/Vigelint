@@ -1,0 +1,34 @@
+##VAR	VALUE
+START_DATE-Y:	2017
+START-DATE-M:	3
+START-DATE-D:	1
+END_DATE-Y:	2023
+END-DATE-M:	9
+END-DATE-D:	1
+ID_FILE_LOC:	/working/lab_nicw/alanR/Vigelint/IDS
+ID_FILE:	2023-09-25_14-13_PA-AU_Panel_IDs.tsv
+MON_BD_AU_LOC:	/working/lab_nicw/alanR/Vigelint/PANELS/AU/MONTHLY_SUMMARY
+MON_BD_UK_LOC:	/working/lab_nicw/alanR/Vigelint/PANELS/UK/MONTHLY_SUMMARY
+OUTPUT_AU_FILE:	/working/lab_nicw/alanR/Vigelint/MOLECULAR-DISEASE-INFORMATION/AU
+OPUT_UK_FILE:	/working/lab_nicw/alanR/Vigelint/MOLECULAR-DISEASE-INFORMATION/UK
+AU_INDIVID_PAN:	/working/lab_nicw/alanR/Vigelint/PANELS/AU/INDIVIDUAL_PANELS
+UK_INDIVID_PAN:	/working/lab_nicw/alanR/Vigelint/PANELS/UK/INDIVIDUAL_PANELS
+CV_MATRIX_LOC:	/working/lab_nicw/alanR/Vigelint/VARIANT-MATRIX
+CV_MATRIX_FILE:	August2023_CLINVAR-full-matirx.txt
+###
+
+R_PLOT1:	/working/lab_nicw/alanR/Vigelint/MOLECULAR-DISEASE-INFORMATION/AU/PLOTS
+R_PLOT2:	AU
+
+
+
+
+
+
+
+
+
+
+
+
+

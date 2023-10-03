@@ -1,0 +1,29 @@
+##VAR	VALUE
+EXP_NAME:	StaticGeneListCancerAugust2023
+MATRIX_LOC:	/working/lab_nicw/alanR/Vigelint/VARIANT-MATRIX
+MATRIX_NAME:	August2023_CLINVAR-full-matirx.txt
+MATRIX_ALL:	August2023_CLINVAR-alleles-matirx.txt
+MATRIX_VUS:	August2023_CLINVAR-vus-matirx.txt
+MATRIX_PLP:	August2023_CLINVAR-plp-matirx.txt
+GENE_LOC:	/working/lab_nicw/alanR/Vigelint/GENE-LIST/
+GENE_LIST:	2023-09-04_GeneList.txt
+OUT_LOC:	/working/lab_nicw/alanR/Vigelint/PATHOGENIC-GENES/StaticGenes
+
+R-PLOT1:	/working/lab_nicw/alanR/Vigelint/PATHOGENIC-GENES/StaticGenes/
+R-PLOT2:	StaticGeneListCancerAugust2023-full.txt
+R-PLOT3:	7
+R-PLOT4:	AUGUST
+R-PLOT5:	2023-08
+###
+
+
+
+
+
+
+
+
+
+
+
+

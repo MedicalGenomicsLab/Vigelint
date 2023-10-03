@@ -1,0 +1,121 @@
+#!/bin/bash
+
+#PBS -N JEDI-CompareEvolvingPanelToMatrix 
+#PBS -r n
+#PBS -l walltime=72:00:00
+#PBS -l ncpus=2,mem=10Gb
+#PBS -m ae
+#PBS -M Alan.Robertson@qimrberghofer.edu.au 
+#PBS -o /mnt/backedup/home/alanR/experiments/log/combined
+#PBS -e /mnt/backedup/home/alanR/experiments/log/combined
+
+#-------------------------------------
+# 
+# Script:	3-3 JEDI: Mode 2 - Evoling Gene Panel
+# Summary:	This script was designed to run a python script that takes each gene from an evoling gene panel and compares it to the variants in the ClinVar Matrix from the corresponding time point?
+# Created: 	2023-09-05
+# 
+#-------------------------------------
+
+#-------------------------------------------
+# Part 1: Enter the variables here 
+#------------------------------------------
+
+#Name experiment
+NAME="JEDI - EVOLVING GENE LIST COMPARISION" 
+#Define location of the script / param files
+RAW_LOC="/mnt/backedup/home/alanR/ALAN_SCRIPTS/Vigenlint/JEDI/EvolvingGenePanel/GIT"
+#Define script
+SCRIPT="EvolvingPanels.py"
+#Define parameters file
+PARAM="params.txt"
+#Defin Rscript
+RSCRIPT="plot_plpdiganostic.R"
+
+#------------------------------------------------
+
+echo "Experiment name: ${NAME}"  
+echo "Parameter file: ${PARAM}"
+echo ""
+
+#Extract key information from the params file to store in the log  
+
+ARG1=$(less ${RAW_LOC}/${PARAM} | awk '/START_DATE-Y/ {print $2}')
+ARG2=$(less ${RAW_LOC}/${PARAM} | awk '/START-DATE-M/ {print $2}')
+ARG3=$(less ${RAW_LOC}/${PARAM} | awk '/START-DATE-D/ {print $2}')
+ARG4=$(less ${RAW_LOC}/${PARAM} | awk '/END_DATE-Y/ {print $2}')
+ARG5=$(less ${RAW_LOC}/${PARAM} | awk '/END-DATE-M/ {print $2}')
+ARG6=$(less ${RAW_LOC}/${PARAM} | awk '/END-DATE-D/ {print $2}')
+
+ARG7=$(less ${RAW_LOC}/${PARAM} | awk '/ID_FILE_LOC/  {print $2}')			#ID file location
+ARG8=$(less ${RAW_LOC}/${PARAM} | awk '/ID_FILE:/ {print $2}')				#ID file
+
+ARG9=$(less ${RAW_LOC}/${PARAM} | awk '/CV_MATRIX_LOC:/ {print $2}')			#Loction of ClinVar Matrix
+ARG10=$(less ${RAW_LOC}/${PARAM} | awk '/CV_MATRIX_FILE:/ {print $2}')			#ClinVar Matrix	
+
+ARG11=$(less ${RAW_LOC}/${PARAM} | awk '/MON_BD_AU_LOC:/ {print $2}')			#Monthly summary - AUS
+ARG12=$(less ${RAW_LOC}/${PARAM} | awk '/MON_BD_UK_LOC:/ {print $2}')			#Monthly summary - UK
+
+ARG13=$(less ${RAW_LOC}/${PARAM} | awk '/AU_INDIVID_PAN:/ {print $2}')			#individual panels - au
+ARG14=$(less ${RAW_LOC}/${PARAM} | awk '/UK_INDIVID_PAN:/ {print $2}')			#individual panels - uk
+
+ARG15=$(less ${RAW_LOC}/${PARAM} | awk '/OUTPUT_AU_FILE:/ {print $2}')			#AU output file 
+ARG16=$(less ${RAW_LOC}/${PARAM} | awk '/OUTPUT_UK_FILE:/ {print $2}')			#UK output file	
+
+#######
+# R ARGS
+#####
+
+#Extract the version of PanelApp being used from the params file 
+ARG21=$(less ${RAW_LOC}/${PARAM} | awk '/ID_FILE_LOC/ {print $2}')       #id file location
+ARG22=$(less ${RAW_LOC}/${PARAM} | awk '/ID_FILE:/ {print $2}')  #id file 
+ARG23=$(less ${RAW_LOC}/${PARAM} | awk '/OUTPUT/ {print $2}')    #montly breakdown file location
+ARG24=$(less ${RAW_LOC}/${PARAM} | awk '/R_PLOT2/ {print $2}')   #source 
+ARG25=$(less ${RAW_LOC}/${PARAM} | awk '/R_PLOT1/ {print $2}')   #directory for R plots
+
+echo "ARG21 = Location: of input file\t ${ARG21}"
+echo "ARG22 = Input file:\t ${ARG22}"
+echo "ARG23 = Location of monthly summary files:\t ${ARG23}"
+echo "ARG24 = SOURCE OF PANEL:\t ${ARG24}"
+echo "ARG25 = PLOT DIR:\t ${ARG25}"
+
+#
+OUT_DIR=${ARG15}
+echo "OUT-DIR = ${OUT_DIR}"
+echo""
+
+#save additional information with logs
+LOG_DIR="/mnt/backedup/home/alanR/experiments/log/combined"
+timestamp=$(date "+%Y-%m-%d_%H-%M")
+cp ${RAW_LOC}/${PARAM} ${LOG_DIR}/${timestamp}_3-3_${PARAM}
+
+#Load Modules
+module load python/3.9.13 
+module load R/4.2.0
+echo "Modules loaded:"
+module list
+echo ""
+
+#Define proxy (ensure cluster can connect to websites outside of QIMR)
+#source ~/.proxy
+
+#Define the  working directory
+OUTPUT_DIR=${OUT_DIR}
+mkdir -p ${OUTPUT_DIR}
+echo "Moving to:"
+cd ${OUTPUT_DIR}
+pwd
+#sleep 5
+
+#-------------------------------------------
+# Part 2: Running the tool 
+#------------------------------------------
+echo "DETERMINING GENE CHANGES"
+python3  ${RAW_LOC}/${SCRIPT} --file-path ${RAW_LOC}/${PARAM} 
+#echo ""
+
+echo "STARTING PLOTS"
+echo "Rscript ${RAW_LOC}/${RSCRIPT} ${ARG21} ${ARG22} ${ARG23} ${ARG24} ${ARG25}"
+Rscript ${RAW_LOC}/${RSCRIPT} ${ARG21} ${ARG22} ${ARG23} ${ARG24} ${ARG25}
+#echo "Files Produced:"
+#ls
