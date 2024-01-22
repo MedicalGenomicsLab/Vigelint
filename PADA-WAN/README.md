@@ -142,9 +142,9 @@ This script determines the genes that have been added to, and removed from a pan
 
   This script also requires a parameters file. An example of the parameter file can be found in /PADA-WAN/2-1 Determine Gene Changes/
 
-## 2.2 - Determine Cumulative Gene Changes
+## 2.2 + 2.3 - Determine Cumulative Gene Changes and plot the results
 
-This script determines the cumulative number of gene changes that occur each month of the analysis window. This script has been re-written to make it easier to automatically plot the Gene Changes.
+This script determines the cumulative number of gene changes that occur each month of the analysis window. This script has been re-written from version 1.0 by combining 2.2 and 2.3 so that the Gene Changes are automatically ploted.
 
   To run this script use the following commands:
 
