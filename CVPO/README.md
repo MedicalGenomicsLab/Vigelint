@@ -26,13 +26,13 @@ CVPO is broken into two parts, a manual part, and a automatic part.
 
 # Manual Steps
 
-_Manual Step 1:_ **Download the Gene Specific Summary Files**
+ - _Manual Step 1:_ **Download the Gene Specific Summary Files**
 Navigate to:
   [ClinVar FTP Archive](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/)
 
 Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
 
-_Manual Step 2:_ **Rename the Gene Specific Summary Files**
+ - _Manual Step 2:_ **Rename the Gene Specific Summary Files**
 Once downloaded and extracted, the resulting file will be named _gene_specific_summary.txt_. Unfortunately, this process strips the time period from the name of the file.
 As ClinVar uses an alternative method to define a month (A Thursday close to the start of the month) to the one used by used by PADA-WAN (11:59pm on the last day of the month), this provides us with an oppurtunity to assign a consistent time peroid to each.
 
@@ -40,11 +40,11 @@ CVPO has been designed to expect files in the following format 'year'_'month'-ge
 
 For example; this means the _Gene Specific Summary file_ originally labelled as gene_specific_summary_2023-06.txt.gz (released on the 1st of June 2023) will be renamed to be 2023_05-gene_specific_summary.txt as it is the most comparible to the PADA-WAN data from May 2023 (representing PanelApp on 2023-05-31).
  
-_Manual Step 3:_ **Move The Gene Specific Summary Files**
+ - _Manual Step 3:_ **Move The Gene Specific Summary Files**
 
 To ensure that CVPO can analyse each file, each renamed file should be stored in a seperate folder.
 
-_Manual Step 4:_ **Download the Ensembl ID to NCBI ID table from biomart**
+ - _Manual Step 4:_ **Download the Ensembl ID to NCBI ID table from biomart**
 
 # Automated Steps 
 
