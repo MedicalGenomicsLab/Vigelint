@@ -36,9 +36,9 @@ Download the _Gene Specific Summary_ file for each period, that you wish to merg
 Once downloaded and extracted, the resulting file will be named _gene_specific_summary.txt_. Unfortunately, this process strips the time period from the name of the file.
 As ClinVar uses an alternative method to define a month (A Thursday close to the start of the month) to the one used by used by PADA-WAN (11:59pm on the last day of the month), this provides us with an oppurtunity to assign a consistent time peroid to each.
 
-CVPO has been designed to expect files in the following format 'year'_'month'-gene_specific_summary.txt. In this model, year should be written 2024, and months should be written as two digit numbers (i.e. May is 05).
+-- CVPO has been designed to expect files in the following format 'year'_'month'-gene_specific_summary.txt. In this model, year should be written 2024, and months should be written as two digit numbers (i.e. May is 05).
 
-For example; this means the _Gene Specific Summary file_ originally labelled as gene_specific_summary_2023-06.txt.gz (released on the 1st of June 2023) will be renamed to be 2023_05-gene_specific_summary.txt as it is the most comparible to the PADA-WAN data from May 2023 (representing PanelApp on 2023-05-31).
+-- For example; this means the _Gene Specific Summary file_ originally labelled as gene_specific_summary_2023-06.txt.gz (released on the 1st of June 2023) will be renamed to be 2023_05-gene_specific_summary.txt as it is the most comparible to the PADA-WAN data from May 2023 (representing PanelApp on 2023-05-31).
  
  - _Manual Step 3:_ **Move The Gene Specific Summary Files**
 
