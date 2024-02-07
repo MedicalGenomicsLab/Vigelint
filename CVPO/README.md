@@ -17,14 +17,15 @@ CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster c
 - re
 - time
 
-
 # CVPO Overview 
 
 CVPO is broken into two parts, a manual part, and a automatic part.
 
 **Note** Unlike the other tools inthe Vigelint, CVPO requires a number of manual steps to acquire the data, asign the correct date to these files, and to move them into the correct location. 
 
-# Manual Steps
+<h2> Preparing the data for CVPO </h2>
+
+# Manual Steps - Downloading the Getting the Gene Data From ClinVar
 
  - _Manual Step 1:_ **Download the Gene Specific Summary Files**
 Navigate to:
@@ -42,21 +43,27 @@ As ClinVar uses an alternative method to define a month (A Thursday close to the
  
  - _Manual Step 3:_ **Move The Gene Specific Summary Files**
 
-To ensure that CVPO can analyse each file, each renamed file should be stored in a seperate folder.
+To ensure that CVPO analyses the appropriate file, each renamed file should be stored in a folder that only contains renamed gene specific summary files.
 
- - _Manual Step 4:_ **Download the Ensembl ID to NCBI ID table from biomart**
+# Automated Steps - Creating the Rosetta Stone (NCBIxENSG)
 
-# Automated Steps 
+Update the 'fileloc' variable in the Rosetta_Script.R.
+Run the script. 
+
+R Rosetta_Script.R
+
+Note the location of file produced from this work, for the 
+
+<h2> Running CVPO </h2>
 
 The next part of CVPO is automated. To run CVPO, modify the attached parameters file (cvpo_params.txt), and use the following commands:
 
     python3 CVPO.py --file-path cvpo_params.txt
 
 In the params file you will need to list:
-1. The location of the _Gene Specific Summary File_ (GSS)
+1. The location of the renamed _Gene Specific Summary Files_ (GSS)
 2. The location of the output matrix
-3. The location and name of the Ensembl to NCBI file
-
+3. The location and name of the Rosetta_File
 
 
 EDIT:
