@@ -6,9 +6,8 @@ Vigelint makes it possible to determine how our understanding of the molecular c
 
 ***Vigelint is composed of:***
 1. [PADA-WAN 2.0](#PADA-WAN)
-2. [CVPO]#(CVPO)
-3. JEDI
-   a. Static Gene List Mode
-   b. Evolving Panel Mode
+2. [CVPO](#CVPO)
+3. JEDI - Static Gene List Mode
+4. JEDI - Evolving Panel Mode
 
 Detailed instructions for each part of the Vigelint Pipeline is available in each folder. 
