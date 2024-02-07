@@ -5,8 +5,8 @@ Vigelint makes it possible to determine how our understanding of the molecular c
 ![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/b83900f9-cf7d-4ab7-b410-7209ce9dafbe)
 
 ***Vigelint is composed of:***
-1. [PADA-WAN 2.0](#PADA-WAN)
-2. [CVPO](#CVPO)
+1. PADA-WAN 2.0
+2. CVPO
 3. JEDI - Static Gene List Mode
 4. JEDI - Evolving Panel Mode
 
