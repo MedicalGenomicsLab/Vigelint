@@ -33,9 +33,9 @@ CVPO is broken into two parts, a manual part, and an automatic part. **The manua
 
 _Manual Step 1:_ **Download the Gene Specific Summary Files**
 
-CVPO requires the information in the offical ClinVar tab delimited Gene Specific Summary files.
+- CVPO requires the information in the offical ClinVar tab delimited Gene Specific Summary files.
 
-To access the Tab-delimited Gene Specific Summary files from ClinVar, navigate to:
+- To access the Tab-delimited Gene Specific Summary files from ClinVar, navigate to:
   [ClinVar FTP Archive](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/)
 
 Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
