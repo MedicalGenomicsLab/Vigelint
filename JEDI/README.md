@@ -4,11 +4,11 @@ Join External genetic Disease Information (JEDI) is a series of scripts design t
 
 # Summary of the different modes: 
 
-# Mode 1
+### Mode 1
 ![Screenshot 2024-02-08 at 10 56 40 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/e891d7f9-a51a-4fab-92c7-f047b3ba616b)
 
 
-# Mode 2
+
 ![Screenshot 2024-02-08 at 11 00 55 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/1ba663b8-aa98-47ed-a4c4-955a59cc17a3)
 
 
