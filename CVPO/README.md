@@ -11,6 +11,11 @@ CVPO requires Python/3.9.13
 
 CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
 
+# R dependencies 
+- R version 4.3.2
+- BiocManager
+- biomaRt 
+
 ## Python dependencies
 - pandas 1.1.5
 - argparse
@@ -19,9 +24,9 @@ CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster c
 
 # CVPO Overview 
 
-CVPO is broken into two parts, a manual part, and a automatic part.
+CVPO is broken into two parts, a manual part, and an automatic part. **The manual part is centred around downloading the correct data from ClinVar and ensuring that data is labelled correcrtly. **
 
-**Note** Unlike the other tools inthe Vigelint, CVPO requires a number of manual steps to acquire the data, asign the correct date to these files, and to move them into the correct location. 
+
 
 <h2> Preparing the data for CVPO </h2>
 
