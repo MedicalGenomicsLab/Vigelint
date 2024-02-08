@@ -2,7 +2,7 @@
 
 Join External genetic Disease Information (JEDI) is a series of scripts design to combine gene and variant information. **JEDI supports two different approaches (or modes).**
 
-<h2> Summary of the different modes:</h2>
+# Summary of the different modes: 
 
 # Mode 1
 ![Screenshot 2024-02-08 at 10 56 40 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/e891d7f9-a51a-4fab-92c7-f047b3ba616b)
@@ -15,7 +15,7 @@ Join External genetic Disease Information (JEDI) is a series of scripts design t
 # System requirements
 JEDI requires Python/3.9.13, and R/3.5.0 .
 
-JEDIhas been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
+JEDI has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
 
 ## Python dependencies
 - pandas 1.1.5
