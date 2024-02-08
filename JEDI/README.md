@@ -1,5 +1,9 @@
 <h1> JEDI: A pipeline designed to combined gene and variant information for a specific disease. </h1>
 
+Join External genetic Disease Information (JEDI) is a series of scripts design to combine gene and variant information. **JEDI supports two different approaches (or modes).**
+
+<h2> Summary of the different modes:</h2>
+
 ## Mode 1
 ![Screenshot 2024-02-08 at 10 56 40 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/e891d7f9-a51a-4fab-92c7-f047b3ba616b)
 
