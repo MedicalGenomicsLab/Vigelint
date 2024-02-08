@@ -2,54 +2,66 @@
 
 Join External genetic Disease Information (JEDI) is a series of scripts design to combine gene and variant information. **JEDI supports two different approaches (or modes).**
 
-# Summary of the different modes: 
+# JEDI Modes: 
 
 ### Mode 1
 ![Screenshot 2024-02-08 at 10 56 40 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/e891d7f9-a51a-4fab-92c7-f047b3ba616b)
 
 
-
+### Mode 2
 ![Screenshot 2024-02-08 at 11 00 55 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/1ba663b8-aa98-47ed-a4c4-955a59cc17a3)
 
+# Mode 1: Static Gene List Overview
 
-# System requirements
+Mode 1 has been designed to extract the number of variants that align to a specific gene, from the variant matrix produced by CVPO.
+This is a very simple script. It simply just takes a list of genes and for each gene, looks up the information in the ClinVar Matrix file, and outputs the results. By using R we can plot how the number of variants in these genes change.
+
+# Mode 1: System requirements
 JEDI requires Python/3.9.13, and R/3.5.0 .
 
 JEDI has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
 
-## Python dependencies
+## Mode 1: Python dependencies
 - pandas 1.1.5
-- numpy 1.19.5
 - argparse
-- re
-- requests
 - time
-- datetime 
 
-## R dependencies
-- ggplot2 
+## Mode 1: R dependencies
+- library(ggplot2)
+- library(zoo)
+- library(dplyr)
+- library(tidyr)
 
-# PADA-WAN Overview 
- 
- PADA-WAN is made of two parts. 
- 
- ***Part 1*** is responsible for downloading and summarising the information from PanelApp
- 
- ***Part 2*** focuses on characterising change and an option set of R scripts makes it possible to visualise these changes
+## Mode 1: Data dependencies 
+1. A list of the genes you want to examine
+2. CVPO Variant Matrix
 
-# PADA-WAN Components
+# Running Mode 1
 
 This section describes the individal scripts that make up PADA-WAN.
  
-## 1.1 - Download IDs
+## Running the Python Script 
 
-The first script in the PADA-WAN pipeline queries the PanelApp / PanelApp Australia API to retrieve a list containing all available panels. In addition to this informaiton, this script also collects information about each panel’s numeric panel-ID, and super panel / rare-disease status. Information about the most current version, the date of release of this version and the number of genetic entities are also downloaded. 
+The Mode 1 python script takes the information from the CVPO variant matrix and extracts that records that are present in a pre-defined gene list.
+An example of a gene list can be seen in:
+ EXAMPLE_GENE_LIST.txt
 
-This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. 
-
-An example of the parameter file can be found in /PADA-WAN/1-1/
+This script requires a parameters file, an example of which can be seen in JEDI-param.txt
 
 To run this script use following command:
-  python3 1-1_Downlad-IDs.py --file-path parameters_file.txt
+  python3 JEDI-StaticGeneLisy.py --file-path JEDI-param.txt
 
-If run correctly it will produce a .tsv file containing information for each panel in the PanelApp of your choice.
+## Running the R Script 
+
+The R script plots the results from the Python using ggplot.
+
+To run this script use following command:
+
+ R 2023-09-24_ChangesInStaticGeneList.R --file-path Argument-1 Argument-2 Argument-3 Argument-4 Argument-5
+
+- Argument 1 = Location of results from JEDI-StaticGeneLisy.py
+- Argument 2 = Name of results from JEDI-StaticGeneLisy.py
+- Argument 3 = Number of 'top genes'
+- Argument 4 = Name of experiment
+- Arugment 5 = Time Peroid
+
