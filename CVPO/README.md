@@ -24,8 +24,7 @@ CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster c
 
 # CVPO Overview 
 
-CVPO is broken into two parts, a manual part, and an automatic part. **The manual part is centred around downloading the correct data from ClinVar and ensuring that data is labelled correcrtly. **
-
+CVPO is broken into two parts, a manual part, and an automatic part. **The manual part is centred around downloading the correct data from ClinVar and ensuring that data is labelled correctly.**
 
 
 <h2> Preparing the data for CVPO </h2>
@@ -33,7 +32,10 @@ CVPO is broken into two parts, a manual part, and an automatic part. **The manua
 # Manual Steps - Downloading the Getting the Gene Data From ClinVar
 
  - _Manual Step 1:_ **Download the Gene Specific Summary Files**
-Navigate to:
+
+CVPO requires the information in the offical ClinVar tab delimited Gene Specific Summary files.
+
+To access the Tab-delimited Gene Specific Summary files from ClinVar, navigate to:
   [ClinVar FTP Archive](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/)
 
 Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
