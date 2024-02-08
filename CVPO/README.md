@@ -11,7 +11,7 @@ CVPO requires Python/3.9.13
 
 CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
 
-# R dependencies 
+## R dependencies 
 - R version 4.3.2
 - BiocManager
 - biomaRt 
