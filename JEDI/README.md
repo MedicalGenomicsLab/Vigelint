@@ -56,8 +56,7 @@ To run this script use following command:
 The R script plots the results from the Python using ggplot.
 
 To run this script use following command:
-
- R 2023-09-24_ChangesInStaticGeneList.R --file-path Argument-1 Argument-2 Argument-3 Argument-4 Argument-5
+  R 2023-09-24_ChangesInStaticGeneList.R --file-path Argument-1 Argument-2 Argument-3 Argument-4 Argument-5
 
 - Argument 1 = Location of results from JEDI-StaticGeneLisy.py
 - Argument 2 = Name of results from JEDI-StaticGeneLisy.py
