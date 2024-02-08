@@ -73,4 +73,4 @@ In the params file you will need to list:
 
 
 EDIT:
-Upon review, the 
+Upon review it is clear that the Gene Specific Summary file uses the term 'allele' to refer to all alleles (SNVs, CNVs, etc) when describing all alleles, but when descibing pathogenic alleles, this term exclusively refers to SNVs.
