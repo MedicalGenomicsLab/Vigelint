@@ -26,7 +26,6 @@ CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster c
 
 CVPO is broken into two parts, a manual part, and an automatic part. **The manual part is centred around downloading the correct data from ClinVar and ensuring that data is labelled correctly.**
 
-
 <h2> Preparing the data for CVPO </h2>
 
 # Manual Steps - Downloading the Getting the Gene Data From ClinVar
@@ -38,7 +37,7 @@ _Manual Step 1:_ **Download the Gene Specific Summary Files**
 - To access the Tab-delimited Gene Specific Summary files from ClinVar, navigate to:
   [ClinVar FTP Archive](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/)
 
-Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
+- Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
 
 _Manual Step 2:_ **Rename the Gene Specific Summary Files**
 - Once downloaded and extracted, the resulting file will be named _gene_specific_summary.txt_. Unfortunately, this process strips the time period from the name of the file.
@@ -55,11 +54,11 @@ To ensure that CVPO analyses the appropriate file, each renamed file should be s
 # Automated Steps - Creating the Rosetta Stone (NCBIxENSG)
 
 Update the 'fileloc' variable in the Rosetta_Script.R.
-Run the script. 
+Run the script using the following command:
 
-R Rosetta_Script.R
+    R Rosetta_Script.R 
 
-Note the location of file produced from this work, for the 
+Note the variable describing the location of file produced from this work needs to be updated for your system.
 
 <h2> Running CVPO </h2>
 
