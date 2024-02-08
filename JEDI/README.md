@@ -1,10 +1,11 @@
 <h1> JEDI: A pipeline designed to combined gene and variant information for a specific disease. </h1>
 
 ## Mode 1
+![Screenshot 2024-02-08 at 10 56 40 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/e891d7f9-a51a-4fab-92c7-f047b3ba616b)
 
 
 ## Mode 2
-![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/0a336ea3-945f-45a8-982b-00129b4d487c)
+![Screenshot 2024-02-08 at 11 00 55 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/1ba663b8-aa98-47ed-a4c4-955a59cc17a3)
 
 
 # System requirements
