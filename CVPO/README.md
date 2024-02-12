@@ -28,7 +28,7 @@ CVPO is broken into two parts, a manual part, and an automatic part. **The manua
 
 <h2> Preparing the data for CVPO </h2>
 
-# Downloading the Getting the Gene Data From ClinVar
+## Downloading the Getting the Gene Data From ClinVar
 
 _Step 1:_ open Gene_Specific_Summary_rsync.sh. Copy the command for the time interval you want to examine. With the command line natigate to the folder you wish to store the data in. In the command line enter the command you copied. Repeat for each time peroid you're interested in.
 
@@ -53,7 +53,7 @@ _Step 3:_ **Manually Move The Gene Specific Summary Files**
 
 To ensure that CVPO analyses the appropriate file, each renamed file should be stored in a folder that only contains renamed gene specific summary files.
 
-# Automated Steps - Creating the Rosetta Stone (NCBIxENSG)
+## Creating the Rosetta Stone (NCBIxENSG)
 
 Update the 'fileloc' variable in the Rosetta_Script.R.
 Run the script using the following command:
