@@ -28,9 +28,11 @@ CVPO is broken into two parts, a manual part, and an automatic part. **The manua
 
 <h2> Preparing the data for CVPO </h2>
 
-# Manual Steps - Downloading the Getting the Gene Data From ClinVar
+# Downloading the Getting the Gene Data From ClinVar
 
-_Manual Step 1:_ **Download the Gene Specific Summary Files**
+_Step 1:_ open Gene_Specific_Summary_rsync.sh. Copy the command for the time interval you want to examine. With the command line natigate to the folder you wish to store the data in. In the command line enter the command you copied. Repeat for each time peroid you're interested in.
+
+_Manual Alternative:_ **Download the Gene Specific Summary Files**
 
 - CVPO requires the information in the offical ClinVar tab delimited Gene Specific Summary files.
 
@@ -39,7 +41,7 @@ _Manual Step 1:_ **Download the Gene Specific Summary Files**
 
 - Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
 
-_Manual Step 2:_ **Rename the Gene Specific Summary Files**
+_Step 2:_ **Manually Rename the Gene Specific Summary Files**
 - Once downloaded and extracted, the resulting file will be named _gene_specific_summary.txt_. Unfortunately, this process strips the time period from the name of the file.
 As ClinVar uses an alternative method to define a month (A Thursday close to the start of the month) to the one used by used by PADA-WAN (11:59pm on the last day of the month), this provides us with an oppurtunity to assign a consistent time peroid to each.
 
@@ -47,7 +49,7 @@ As ClinVar uses an alternative method to define a month (A Thursday close to the
 
 - For example; this means the _Gene Specific Summary file_ originally labelled as gene_specific_summary_2023-06.txt.gz (released on the 1st of June 2023) will be renamed to be 2023_05-gene_specific_summary.txt as it is the most comparible to the PADA-WAN data from May 2023 (representing PanelApp on 2023-05-31).
  
-_Manual Step 3:_ **Move The Gene Specific Summary Files**
+_Step 3:_ **Manually Move The Gene Specific Summary Files**
 
 To ensure that CVPO analyses the appropriate file, each renamed file should be stored in a folder that only contains renamed gene specific summary files.
 
