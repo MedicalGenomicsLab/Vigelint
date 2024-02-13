@@ -74,5 +74,6 @@ In the params file you will need to list:
 3. The location and name of the Rosetta_File
 
 
-EDIT:
-Upon review it is clear that the Gene Specific Summary file uses the term 'allele' to refer to all alleles (SNVs, CNVs, etc) when describing all alleles, but when descibing pathogenic alleles, this term exclusively refers to SNVs.
+## To note:
+1. In late 2023, the number of genetic loci (genes) present in the Gene Specific Summary file increased from 45,790 (2023-10-28) to 92,903 (2023-12-03).
+2. Users should be aware that clear that in the Gene Specific Summary file, ClinVar uses the term '_allele_' to refer to all alleles (SNVs, CNVs, etc) when describing Total Alleles, but when descibing pathogenic alleles, this term exclusively refers to SNVs.
