@@ -32,6 +32,8 @@ CVPO is broken into two parts, a manual part, and an automatic part. **The manua
 
 _Step 1:_ open Gene_Specific_Summary_rsync.sh. Copy the command for the time interval you want to examine. With the command line natigate to the folder you wish to store the data in. In the command line enter the command you copied. 
 
+- For example:
+
     rsync -rvP --include="gene_specific_summary_*" --exclude='*' rsync://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/ .
 
 _Manual Alternative:_ **Download the Gene Specific Summary Files**
