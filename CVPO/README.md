@@ -53,9 +53,10 @@ _Step 3:_ **Manually Move The Gene Specific Summary Files**
 
 To ensure that CVPO analyses the appropriate file, each renamed file should be stored in a folder that only contains renamed gene specific summary files.
 
-## Creating the Rosetta Stone (NCBIxENSG)
+## Creating the Rosetta Stone with the Rosetta Script (NCBIxENSG)
 
-Update the 'fileloc' variable in the Rosetta_Script.R.
+To match the genes in ClinVar with the genes in PanelApp, the CVPO annotates each NCBI gene with an Ensembl Gene ID. This is achieved with the Rosetta script. 
+To use the Rosetta update the 'fileloc' variable in the Rosetta_Script.R.
 Run the script using the following command:
 
     R Rosetta_Script.R 
