@@ -1,0 +1,5 @@
+Panel	ID	Version	Release-Date	No.Genes	No.STRs	No.Regions	SuperPanel-Status	Source	Disease-Group	PanelType
+Familial Generalised Epilepsy	3796	0.13	2023-01-03T04:57:55.063924Z	20	0	0	Panel	AU	Neurology and neurodevelopmental disorders	Misc.
+Focal Epilepsy	3795	0.13	2023-01-03T05:07:06.950984Z	17	0	0	Panel	AU	Neurology and neurodevelopmental disorders	Misc.
+Genetic Epilepsy	202	0.2273	2024-02-14T03:12:05.610876Z	1008	2	0	Panel	AU	Neurology and neurodevelopmental disorders	Rare Disease
+Progressive Myoclonic Epilepsy	331	0.19	2023-12-27T04:51:35.413769Z	33	0	0	Panel	AU	Neurology and neurodevelopmental disorders	Rare Disease
