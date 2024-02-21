@@ -11,3 +11,5 @@ Vigelint makes it possible to determine how our understanding of the molecular c
 4. JEDI - Evolving Panel Mode
 
 Detailed instructions for each part of the Vigelint Pipeline is available in each folder. 
+
+To run JEDI - Evolving Panel Mode, you must first run PADA-WAN and CVPO.
