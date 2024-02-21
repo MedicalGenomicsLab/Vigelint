@@ -1,0 +1,19 @@
+Panel	ID	Version	Release-Date	No.Genes	No.STRs	No.Regions	SuperPanel-Status	Source	Disease-Group	PanelType
+Achromatopsia	3149	1.5	2022-09-21T07:10:55.626185Z	8	0	0	Panel	AU	Ophthalmological disorders	Rare Disease
+Additional findings_Adult	221	0.166	2023-09-07T04:46:21.132899Z	78	0	0	Panel	AU	Screening	Misc.
+Angelman Rett like syndromes	41	1.9	2023-10-03T01:36:54.227695Z	37	0	0	Panel	AU	Dysmorphic and congenital abnormality syndromes	Rare Disease
+Chromosome Breakage Disorders	79	1.19	2023-05-07T02:50:15.778732Z	60	0	0	Panel	AU	Dysmorphic and congenital abnormality syndromes	Rare Disease
+Corneal Dystrophy	91	1.8	2023-01-03T01:49:41.263413Z	28	1	0	Panel	AU	Ophthalmological disorders	Rare Disease
+Craniosynostosis	93	1.66	2023-05-18T06:07:25.718759Z	100	0	0	Panel	AU	Dysmorphic and congenital abnormality syndromes	Rare Disease
+Dilated Cardiomyopathy	95	1.3	2023-12-07T03:52:57.696750Z	54	0	0	Panel	AU	Cardiovascular disorders	Rare Disease
+Hyperammonaemia	3470	0.1	2023-03-02T03:41:08.610876Z	43	0	0	Panel	AU	Metabolic disorders	Rare Disease
+Inflammatory bowel disease	123	0.112	2023-12-15T03:02:46.041129Z	82	0	0	Panel	AU	Gastroenterological disorders	Rare Disease
+Radial Ray Abnormalities	163	1.9	2023-07-06T02:59:33.448240Z	60	0	0	Panel	AU	Dysmorphic and congenital abnormality syndromes	Rare Disease
+Rasopathy	164	0.99	2023-06-01T01:20:11.230257Z	27	0	0	Panel	AU	Dysmorphic and congenital abnormality syndromes	Rare Disease
+Repeat Disorders	3597	0.157	2023-07-11T03:52:22.476006Z	0	72	0	Panel	AU		Rare Disease
+Skeletal dysplasia	258	0.262	2024-01-23T07:57:57.043790Z	596	0	6	Panel	AU	Skeletal disorders	Misc.
+Vascular Malformations_Germline	300	1.11	2023-10-05T01:36:05.623314Z	41	0	0	Panel	AU	Cardiovascular disorders	Rare Disease
+Vascular Malformations_Somatic	3181	1.1	2023-04-06T07:36:29.840897Z	25	0	0	Panel	AU	Cardiovascular disorders	Rare Disease
+Vascular Malformations SuperPanel	3731	1.43	2023-11-15T21:05:17.895271Z	177	0	0	Super Panel	AU	Cardiovascular disorders	Misc.
+Vitamin C Pathway Disorders	184	0.17	2022-04-06T21:47:25.217699Z	15	0	0	Panel	AU	Metabolic disorders	Misc.
+Wilms Tumour Predisposition	252	0.39	2023-01-15T07:05:05.188310Z	21	0	0	Panel	AU	Cancer predisposition	Misc.

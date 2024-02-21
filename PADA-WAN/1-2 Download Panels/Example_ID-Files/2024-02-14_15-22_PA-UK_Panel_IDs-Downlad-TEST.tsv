@@ -1,0 +1,16 @@
+Panel	ID	Version	Release-Date	No.Genes	No.STRs	No.Regions	SuperPanel-Status	Source	Disease-Group	PanelType
+Acute intermittent porphyria	1207	1.1	2023-09-14T12:46:16.112015Z	1	0	0	Panel	UK		Rare Disease
+Adult onset neurodegenerative disorder	474	4.46	2024-01-23T16:09:59.443547Z	413	16	4	Panel	UK		Rare Disease
+Autosomal recessive primary hypertrophic osteoarthropathy	557	1.12	2023-10-26T01:14:39.277992Z	3	0	0	Panel	UK		Rare Disease
+BAP1 associated tumour predisposition syndrome	1216	1.1	2023-09-14T13:05:10.918850Z	1	0	0	Panel	UK		Rare Disease
+Bardet Biedl syndrome	543	2.4	2023-10-26T00:50:27.104172Z	24	0	0	Panel	UK		Rare Disease
+Beckwith-Wiedemann syndrome (BWS) and other congenital overgrowth disorders	38	1.12	2023-08-09T11:26:35.704386Z	30	0	1	Panel	UK	Growth disorders	Rare Disease
+Carney complex	1313	1.1	2023-09-14T13:12:59.396729Z	1	0	0	Panel	UK		Rare Disease
+Familial cicatricial alopecia	305	1.5	2022-06-08T11:03:55.380426Z	25	0	0	Panel	UK	Dermatological disorders	Rare Disease
+Neurofibromatosis Type 1	255	1.32	2022-10-13T15:59:47.914940Z	30	0	1	Panel	UK	Tumour syndromes	Rare Disease
+Primary pigmented nodular adrenocortical disease	566	1.1	2023-10-26T01:11:05.367241Z	4	0	0	Panel	UK		Rare Disease
+Progressive cardiac conduction disease	506	2.6	2024-01-22T16:16:35.644942Z	21	0	0	Super Panel	UK		Rare Disease
+Renal cancer pertinent cancer susceptibility	154	1.2	2022-08-30T13:53:54.354191Z	10	0	0	Panel	UK	Cancer Programme	Misc.
+Skeletal Muscle Channelopathies	229	1.46	2024-01-23T14:48:46.138995Z	22	2	0	Panel	UK	Neurology and neurodevelopmental disorders	Rare Disease
+Tay-Sachs disease	1396	1.1	2023-09-14T13:04:43.491035Z	1	0	0	Panel	UK		Rare Disease
+Wilms tumour with features suggestive of predisposition	1108	1.3	2023-10-26T09:50:51.553784Z	5	0	0	Panel	UK		Rare Disease
