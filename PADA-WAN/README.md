@@ -96,7 +96,8 @@ Two example of the parameter files can be found in /PADA-WAN/1-2/
 
   _Notes on 1-2_
 1. When preparing the parameters file, please ensure that there is no trailing white space.
-2. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
+2. As downloading every version of every panel from PanelApp can take a significant amount of time, to facilitate testing we have provided an ID file that only contains a small number of panels to download. These files have been generated for PanelApp and PanelApp Australia and can be found in 1-2 Download Panels/Example_ID-Files.
+3. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
 
 
 ## 1.3 - Panel Summariser
