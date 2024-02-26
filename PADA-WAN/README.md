@@ -53,6 +53,24 @@ PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a clust
 # PADA-WAN Components
 
 This section describes the individal scripts that make up PADA-WAN.
+
+## PADA-WAN dependencies: Tokens
+
+In order to connect to PanelApp and PanelApp Australia API, you will need to get a token. These tokens are needed for Scripts 1-1, and 1-2.
+While the example scripts, contain a working PanelApp and PanelApp Australia token, it is best practice to get your own tokens.
+
+***PanelApp Australia Token*** 
+1. Navigate to: https://panelapp.agha.umccr.org/api/docs/
+
+2. Under panels, select 'Get'
+
+3. Click the 'Try it out' button
+
+4. Click the large button labelled execute
+
+5. In the black text box, copy the long string of text named X-CSRFToken
+
+6. Paste the text into the params file, if the last character is a quotation mark, you can remove it 
  
 ## 1.1 - Download IDs
 
@@ -60,7 +78,7 @@ The first script in the PADA-WAN pipeline queries the PanelApp API to retrieve a
 
 This script has been updated to support both the PanelApp Australia, and the Genomics England Instance of Panel App 
 
-This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. 
+This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. You can replace the example token files in this file by following the steps above.
 
 An example of the parameter file can be found in /PADA-WAN/1-1/
 
