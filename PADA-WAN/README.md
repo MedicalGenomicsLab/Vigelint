@@ -63,12 +63,16 @@ While the example scripts, contain a working PanelApp and PanelApp Australia tok
 1. Navigate to: https://panelapp.agha.umccr.org/api/docs/
 
 2. Under panels, select 'Get'
+![Screenshot 2024-02-27 at 9 14 07 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/523f25d5-1127-405d-a120-6895382945ef)
 
 3. Click the 'Try it out' button
+![Screenshot 2024-02-27 at 9 14 24 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/945081a8-0b8e-4b31-b5e7-de3f993edd45)
 
 4. Click the large button labelled execute
+![Screenshot 2024-02-27 at 9 14 41 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/33bb9991-6fa2-4761-ab24-b8b777b7d676)
 
 5. In the black text box, copy the long string of text named X-CSRFToken
+![Screenshot 2024-02-27 at 9 14 57 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/3b6cb859-9403-4eef-98d3-77c895751f34)
 
 6. Paste the text into the params file, if the last character is a quotation mark, you can remove it 
  
