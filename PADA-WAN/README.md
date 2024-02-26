@@ -74,7 +74,17 @@ While the example scripts, contain a working PanelApp and PanelApp Australia tok
 5. In the black text box, copy the long string of text named X-CSRFToken
 ![Screenshot 2024-02-27 at 9 14 57 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/3b6cb859-9403-4eef-98d3-77c895751f34)
 
-6. Paste the text into the params file, if the last character is a quotation mark, you can remove it 
+6. Paste the text into the params file, if the last character is a quotation mark, you can remove it
+
+***Obtainign the token for the Genomics England instance of PanelApp*** 
+
+This process is largely the same as the process of PanelApp Australia described above, however, there are some subtle differences.
+
+1. Navigate to: https://panelapp.genomicsengland.co.uk/api/docs/
+
+2. When copying the token from the black text box, the output will look slightly different, but it contains the same information.
+![Screenshot 2024-02-27 at 9 19 51 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/2bd433d1-b841-4d40-95a2-778b043dddba)
+
  
 ## 1.1 - Download IDs
 
