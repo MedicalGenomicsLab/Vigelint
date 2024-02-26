@@ -95,6 +95,7 @@ This script has been updated to support both the PanelApp Australia, and the Gen
 This script requires a parameters file, which contains information about the version of PanelApp to query, as well as the the input / output directories. The parameter file also contains the token files for both PanelApp Australia and Genomics England instance of PanelApp. You can replace the example token files in this file by following the steps above.
 
 ***The Parameters File***
+
 An example of the parameter file can be found in /PADA-WAN/1-1 Download IDS/ as _1-1_params.txt_
 This parameters file contains the following information:
 1. INDIVIDUAL_RUN:   [either 'AU' or 'UK'] - this value tells the script which version of PanelApp to download the IDs from
@@ -106,6 +107,7 @@ This parameters file contains the following information:
 7. TOKEN_UK:         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
 
 ***Running the script***
+
   To run this script use the following commands:
 
     python3 1-1_DownladIDs.py --file-path parameters_file.txt
