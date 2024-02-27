@@ -6,7 +6,7 @@
 
 - [Running PADA-WAN](#running-padawan)
   - [Downloding Panel IDs](#python-dependencies)
-  - [Downloading Panels](#1.1 - Download IDs)
+  - [1.1 - Download IDs](#1.1DownloadIDs)
   - [Summarising Panels](#panelapp-tokens)
   - [Determining How Genes Change](#panelapp-tokens)
   - [Determining The Cumulative Gene Changes](#panelapp-tokens)
