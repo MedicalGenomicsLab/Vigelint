@@ -1,13 +1,11 @@
 ##VAR	VALUE
 PANELAPP_VERSN:	AU	#Select either the Genomics England instance (UK) or PanelApp Australia (AU)
-ID_LOCATION:  [location/ID-file.tsv]   # please enter the location and file name of ID file, i.e.: /working/lab_nicw/alanR/Vigelint/IDS/2024-02-14_15-20_PA-AU_Panel_ID-Download-TEST.tsv
+ID_LOCATION:	/working/lab_nicw/alanR/Vigelint/IDS/2024-02-14_PA-AU_Panel_IDs-EPIL.tsv	
 ###
 OUTDIR_AU:	/working/lab_nicw/alanR/Vigelint/PANELS/AU/INDIVIDUAL_PANELS
 PATH_AU:	https://panelapp.agha.umccr.org/api/v1/panels/
-TOKEN_AU:	PSgeKIwkDKU2Kt9LVAeDEFoLz2FE8UpKeACrS4uUi6rri8shbemDNv1oWHzD4bp0
+TOKEN_AU:	tJpO5hBzARN8nztolZw7Obs7a2mi7lfr9mr0o0p2nGG0OYbmxTzVWlZL2V65ycjF
 OUTDIR_UK:	/working/lab_nicw/alanR/Vigelint/PANELS/UK/INDIVIDUAL_PANELS
 PATH_UK:	https://panelapp.genomicsengland.co.uk/api/v1/panels/
-TOKEN_UK:	VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7
+TOKEN_UK:	b7HYeYQgHTRoKbV00CoVI3ZyTdgauldHd0JNV9SR7ihUMBVN5o975JjU1S4pG722
 ###
-
-
