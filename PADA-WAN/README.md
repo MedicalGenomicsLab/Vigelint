@@ -98,13 +98,13 @@ This script requires a parameters file, which contains information about the ver
 
 An example of the parameter file can be found in /PADA-WAN/1-1 Download IDS/ as _1-1_params.txt_
 This parameters file contains the following information:
-1. INDIVIDUAL_RUN:   [either 'AU' or 'UK'] - this value tells the script which version of PanelApp to download the IDs from
-2. OUT-DIRAU:        [location] - this value defines where the output from this script is stored
-3. PATH_AU:          _https://panelapp.agha.umccr.org/api/v1/panels/?page=_  - this is the address of PanelApp Australia - you should _not_ need to change this
-4. TOKEN_AU:          LytbzDyWsuzun1ScDq2tvYd1RA4e4zQdrbvnSmmpfjsmOqAaPk5hD8KFJtO1vqUr - this is token for PanelApp Australia - you _should_ change this - see the method above for advice
-5. OUT-DIRUK:        [location] - this value defines where the output from this script is stored
-6. PATH_UK:          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
-7. TOKEN_UK:         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
+1. **INDIVIDUAL_RUN**:   [either 'AU' or 'UK'] - this value tells the script which version of PanelApp to download the IDs from
+2. **OUT-DIRAU:**        [location] - this value defines where the output from this script is stored
+3. **PATH_AU:**          _https://panelapp.agha.umccr.org/api/v1/panels/?page=_  - this is the address of PanelApp Australia - you should _not_ need to change this
+4. **TOKEN_AU:**         LytbzDyWsuzun1ScDq2tvYd1RA4e4zQdrbvnSmmpfjsmOqAaPk5hD8KFJtO1vqUr - this is token for PanelApp Australia - you _should_ change this - see the method above for advice
+5. **OUT-DIRUK:**        [location] - this value defines where the output from this script is stored
+6. **PATH_UK:**          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
+7. **TOKEN_UK:**         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
 
 ***Running the script***
 
@@ -122,20 +122,41 @@ Note: When preparing the parameters file, please ensure that there is no trailin
 
 This script takes each of the panels in the listed in the output file from the Download IDs script (1.1,) and uses this information to download begin to download individual panels from the PanelApp / PanelApp Australia API. 
 
+***The Parameters File***
+1. **PANELAPP_VERSN:**    [either 'AU' or 'UK'] - this value tells the script which version of PanelApp to download the IDs from
+2. **ID_LOCATION:**       [location/name_of_id_file_from_1-1.tsv] - this value tells where the ID file you downloaded using 1-1_Download IDS is
+3. **OUT-DIRAU:**        [location] - this value defines where the output from **PanelApp** is stored, it _should_ be different from the ID folder
+3. **PATH_AU:**          _https://panelapp.agha.umccr.org/api/v1/panels/?page=_  - this is the address of PanelApp Australia - you should _not_ need to change this
+4. **TOKEN_AU:**         LytbzDyWsuzun1ScDq2tvYd1RA4e4zQdrbvnSmmpfjsmOqAaPk5hD8KFJtO1vqUr - this is token for PanelApp Australia - you _should_ change this - see the method above for advice
+5. **OUT-DIRUK:**        [location] - this value defines where the output from **PanelApp** is stored, it _should_ be different from the ID folder
+6. **PATH_UK:**          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
+7. **TOKEN_UK:**         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
+  
+Two examples of the parameter files can be found in /PADA-WAN/1-2 Download Panels/Example_ID-Files/. This folder contains ID files used to download epilepsy panels (EPIL.tsv), as well as ID files designed to test that this script is working properly (TEST.tsv)
+
+_***Notes on the ID file***_
+
+1. The ID file we produced in step 1-1 is critical to this script. However are a few things to note - editting the ID file means that you can remove panels you do not wish to download, this is how we created the smaller, example test ID  files in the Examples folders
+2. **NOTE - ID location should match the Version of PanelApp - trying to download Australian Panels, using the English version of PanelApp will only result in heartache**
+
+***Running the script***
+
+  To run this script use the following commands:
+
+    python3 1-2_PanelDownloader.py --file-path parameters_file.txt
+
+***Notes on this script***
+
 There are some things to note about this approach:
 
 1. As PanelApp uses both minor and major releases, and there is a large in the number of minor releases before a major release we developed a system to accoutn for this variability. To ensure that that every possible version of a panel was downloaded, this script systematically attempt to download every version from 0.0 until the current release.If a specific minor version of this panel was not available, the script skips it and attempts to download the next minor release of the panel. If the script was unable to download ten consecutive minor versions of panel, the script assumes that there are no more minor releases associated with this major version, and moves to next major release of the panel. If the script failed to download the version of the panel listed in the ID file, a warning file is produced.
 2. In addition to processing every available version of a panel, this script also produces a summary file, that contains the number of genes as well as the total number of genes in a specific version of panel.
 3. As the information from PanelApp is stored in the JSON format, it can be challenging for people to access this information.To make this information more accessible, it is stored here as a tab delimited text file.
-4. If you only want to investigate a specific panel, you can edit the ID file produced by 1-1, and remove the panels you do not wish to download.
 
-This script also requires a parameters file. This file contains the location of the ID file produced by 1.1 as well as the tokens for both PanelApp Australia and the Genomics England instance of the resource.
 
-Two example of the parameter files can be found in /PADA-WAN/1-2/
 
-  To run this script use the following commands:
 
-    python3 1-2_PanelDownloader.py --file-path parameters_file.txt
+
 
   _Notes on 1-2_
 1. When preparing the parameters file, please ensure that there is no trailing white space.
