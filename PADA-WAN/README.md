@@ -2,7 +2,7 @@
 
 **PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN)** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was originally developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023), but has since been updated to support both PanelApp Australia and the Genomics England Instance of PanelApp and fix some errors when dealing with outlyer panels. Resultingly, this version replaces the version listed in the PanelApp-Pipeline.
 
-**If you want jump right into running each of the scripts, please check out these links **
+**If you want jump right into running each of the scripts, please check out these links**
 
 - [Running PADA-WAN](#running-pada-wan)
   - [Download IDs](#1-1-Download-IDs)
@@ -112,7 +112,7 @@ This parameters file contains the following information:
 3. **PATH_AU:**          _https://panelapp.agha.umccr.org/api/v1/panels/?page=_  - this is the address of PanelApp Australia - you should _not_ need to change this
 4. **TOKEN_AU:**         [long string of symbols] - this is the token for PanelApp Australia - you _should_ change this - see the method above for advice
 5. **OUT-DIRUK:**        [location] - this value defines where the output from this script is stored
-6. **PATH_UK:**          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
+6. **PATH_UK:**          _https://panelapp.genomicsengland.co.uk/api/v1/panels/?page=_ - this is the address of PanelApp UK  - you should _not_ need to change this
 7. **TOKEN_UK:**         [long string of symbols] - this is the token for PanelApp UK - you _should_ change this - see the method above for advice
 
 ***Running the script***
@@ -138,7 +138,7 @@ This script takes each of the panels in the listed in the output file from the D
 3. **PATH_AU:**          _https://panelapp.agha.umccr.org/api/v1/panels/?page=_  - this is the address of PanelApp Australia - you should _not_ need to change this
 4. **TOKEN_AU:**         LytbzDyWsuzun1ScDq2tvYd1RA4e4zQdrbvnSmmpfjsmOqAaPk5hD8KFJtO1vqUr - this is token for PanelApp Australia - you _should_ change this - see the method above for advice
 5. **OUT-DIRUK:**        [location] - this value defines where the output from **PanelApp** is stored, it _should_ be different from the ID folder
-6. **PATH_UK:**          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
+6. **PATH_UK:**          _https://panelapp.genomicsengland.co.uk/api/v1/panels/?page=_ - this is the address of PanelApp UK  - you should _not_ need to change this
 7. **TOKEN_UK:**         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
   
 Two examples of the parameter files can be found in /PADA-WAN/1-2 Download Panels/Example_ID-Files/. This folder contains ID files used to download epilepsy panels (EPIL.tsv) from both PanelApp Aus and UK, as well as ID files designed to test if this script is working properly (TEST.tsv)
