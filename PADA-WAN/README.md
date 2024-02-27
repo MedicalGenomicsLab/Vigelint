@@ -132,12 +132,12 @@ This script takes each of the panels in the listed in the output file from the D
 6. **PATH_UK:**          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
 7. **TOKEN_UK:**         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
   
-Two examples of the parameter files can be found in /PADA-WAN/1-2 Download Panels/Example_ID-Files/. This folder contains ID files used to download epilepsy panels (EPIL.tsv), as well as ID files designed to test that this script is working properly (TEST.tsv)
+Two examples of the parameter files can be found in /PADA-WAN/1-2 Download Panels/Example_ID-Files/. This folder contains ID files used to download epilepsy panels (EPIL.tsv) from both PanelApp Aus and UK, as well as ID files designed to test if this script is working properly (TEST.tsv)
 
 _***Notes on the ID file***_
 
 1. The ID file we produced in step 1-1 is critical to this script. However are a few things to note - editting the ID file means that you can remove panels you do not wish to download, this is how we created the smaller, example test ID  files in the Examples folders
-2. **NOTE - ID location should match the Version of PanelApp - trying to download Australian Panels, using the English version of PanelApp will only result in heartache**
+2. **NOTE - ID location should match the Version of PanelApp - trying to download Australian Panels, using the English version of PanelApp will only result in heartache (and errors)**
 
 ***Running the script***
 
@@ -152,16 +152,9 @@ There are some things to note about this approach:
 1. As PanelApp uses both minor and major releases, and there is a large in the number of minor releases before a major release we developed a system to accoutn for this variability. To ensure that that every possible version of a panel was downloaded, this script systematically attempt to download every version from 0.0 until the current release.If a specific minor version of this panel was not available, the script skips it and attempts to download the next minor release of the panel. If the script was unable to download ten consecutive minor versions of panel, the script assumes that there are no more minor releases associated with this major version, and moves to next major release of the panel. If the script failed to download the version of the panel listed in the ID file, a warning file is produced.
 2. In addition to processing every available version of a panel, this script also produces a summary file, that contains the number of genes as well as the total number of genes in a specific version of panel.
 3. As the information from PanelApp is stored in the JSON format, it can be challenging for people to access this information.To make this information more accessible, it is stored here as a tab delimited text file.
-
-
-
-
-
-
-  _Notes on 1-2_
-1. When preparing the parameters file, please ensure that there is no trailing white space.
-2. As downloading every version of every panel from PanelApp can take a significant amount of time, to facilitate testing we have provided an ID file that only contains a small number of panels to download. These files have been generated for PanelApp and PanelApp Australia and can be found in 1-2 Download Panels/Example_ID-Files.
-3. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
+4. When preparing the parameters file, please ensure that there is no trailing white space.
+5. As downloading every version of every panel from PanelApp can take a significant amount of time, to facilitate testing we have provided an ID file that only contains a small number of panels to download. These files have been generated for PanelApp and PanelApp Australia and can be found in 1-2 Download Panels/Example_ID-Files.
+6. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
 
 
 ## 1.3 - Panel Summariser
