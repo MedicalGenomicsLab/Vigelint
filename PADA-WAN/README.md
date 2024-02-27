@@ -18,7 +18,7 @@ An overview of PADA-WAN can be seen in Figure 1 and Figure 2.
 
 
 ---
-# Using PADA-WAN 
+# Setting up PADA-WAN 
 
 This section describes 
 
@@ -82,6 +82,8 @@ This process is largely the same as the process of PanelApp Australia described 
 
 
 # Running PADA-WAN
+
+This section decribes the steps involved in running each of the scripts that make up the PADA-WAN pipeline, as well as the information that's described in each of the parameters files.
  
 ## 1.1 - Download IDs
 
