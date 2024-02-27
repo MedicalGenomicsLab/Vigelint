@@ -1,46 +1,6 @@
 <h1> PADA-WAN 2.0: A pipeline designed to download and analyse the information from PanelApp Web Applications. </h1>
 
-**PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN)** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was originally developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023), but has since been updated to support both PanelApp Australia and the Genomics England Instance of PanelApp and fix some errors when dealing with outlyer panels.
-
-This version replaces the version listed in the PanelApp-Pipeline.
-
-An overview of PADA-WAN can be seen in Figure 1 and Figure 2.
-
-![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/29cf14e9-5a12-4b3b-8755-1e55c1f593ff)
-
-![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/cec928ed-48c7-44c9-969d-cc8890732f82)
-
-
----
-
-
-- [System requirements](#system-requirements)
-  - [Python dependencies](#python-dependencies)
-  - [R dependencies](#r-dependencies)
-  
-- [PADA-WAN Overview ](#padawan-overview)
-- [PADA-WAN Components](#padawan-components)
-
-
-# System requirements
-PADA-WAN requires Python/3.9.13, and R/4.2.0 .
-
-PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
-
-## Python dependencies
-- pandas 1.1.5
-- numpy 1.19.5
-- argparse
-- re
-- requests
-- time
-- datetime 
-
-## R dependencies
-- ggplot2
-- readxl
-- tidyr
-- stringr
+**PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN)** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was originally developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023), but has since been updated to support both PanelApp Australia and the Genomics England Instance of PanelApp and fix some errors when dealing with outlyer panels. Resultingly, this version replaces the version listed in the PanelApp-Pipeline.
 
 # PADA-WAN Overview 
  
@@ -50,11 +10,46 @@ PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a clust
  
  ***Part 2*** focuses on characterising change and an option set of R scripts makes it possible to visualise these changes
 
-# PADA-WAN Components
+An overview of PADA-WAN can be seen in Figure 1 and Figure 2.
 
-This section describes the individal scripts that make up PADA-WAN.
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/29cf14e9-5a12-4b3b-8755-1e55c1f593ff)
 
-## PADA-WAN dependencies: Tokens
+![image](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/cec928ed-48c7-44c9-969d-cc8890732f82)
+
+
+---
+# Using PADA-WAN 
+
+This section describes 
+
+- [System requirements](#system-requirements)
+  - [Python dependencies](#python-dependencies)
+  - [R dependencies](#r-dependencies)
+  - [PanelApp Tokens](#panelapp-tokens)
+
+
+# System requirements
+
+PADA-WAN requires Python/3.9.13, and R/4.2.0 .
+
+PADA-WAN has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster computer running qsun.
+
+## Python dependencies
+- pandas 1.1.5
+- numpy 1.19.5
+- argparse
+- requests
+- datetime
+- re (will not require pip to install)
+- time (will not require pip to install)
+
+## R dependencies
+- ggplot2
+- readxl
+- tidyr
+- stringr
+
+## PanelApp Tokens
 
 In order to connect to PanelApp and PanelApp Australia API, you will need to get a token. These tokens are needed for Scripts 1-1, and 1-2.
 While the example scripts, contain a working PanelApp and PanelApp Australia token, it is best practice to get your own tokens.
@@ -85,6 +80,8 @@ This process is largely the same as the process of PanelApp Australia described 
 2. When copying the token from the black text box, the output will look slightly different, but it contains the same information.
 ![Screenshot 2024-02-27 at 9 19 51 am](https://github.com/MedicalGenomicsLab/Vigelint/assets/15273099/2bd433d1-b841-4d40-95a2-778b043dddba)
 
+
+# Running PADA-WAN
  
 ## 1.1 - Download IDs
 
