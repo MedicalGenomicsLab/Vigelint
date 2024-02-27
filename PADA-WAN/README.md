@@ -110,10 +110,10 @@ This parameters file contains the following information:
 1. **INDIVIDUAL_RUN**:   [either 'AU' or 'UK'] - this value tells the script which version of PanelApp to download the IDs from
 2. **OUT-DIRAU:**        [location] - this value defines where the output from this script is stored
 3. **PATH_AU:**          _https://panelapp.agha.umccr.org/api/v1/panels/?page=_  - this is the address of PanelApp Australia - you should _not_ need to change this
-4. **TOKEN_AU:**         LytbzDyWsuzun1ScDq2tvYd1RA4e4zQdrbvnSmmpfjsmOqAaPk5hD8KFJtO1vqUr - this is token for PanelApp Australia - you _should_ change this - see the method above for advice
+4. **TOKEN_AU:**         [long string of symbols] - this is the token for PanelApp Australia - you _should_ change this - see the method above for advice
 5. **OUT-DIRUK:**        [location] - this value defines where the output from this script is stored
 6. **PATH_UK:**          https://panelapp.genomicsengland.co.uk/api/v1/panels/?page= - this is the address of PanelApp UK  - you should _not_ need to change this
-7. **TOKEN_UK:**         VpObfRKKvsvhH0Fzq5cgb37JWyMKIn11f7U8lhO2U4IpjnXJpa2qmCtog9c8Nej7 - this is token for PanelApp UK - you _should_ change this - see the method above for advice
+7. **TOKEN_UK:**         [long string of symbols] - this is the token for PanelApp UK - you _should_ change this - see the method above for advice
 
 ***Running the script***
 
