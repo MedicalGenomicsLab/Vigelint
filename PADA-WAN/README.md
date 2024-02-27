@@ -6,7 +6,7 @@
 
 - [Running PADA-WAN](#running-pada-wan)
   - [Download IDs](#1-1-Download-IDs)
-  - [Download Panels](#12-Download-Panels)
+  - [Download Panels](#1-2-Download-Panels)
   - [Summarise Panels](#13-Summarise-Panels)
   - [Determine How Genes Change](#21-Download-Panels)
   - [Determine The Cumulative Gene Changes](#23-Download-Panels)
@@ -127,7 +127,7 @@ _Notes on the 1-1 params file_
 Note: When preparing the parameters file, please ensure that there is no trailing white space, as this can cause issues
 
 
-## 12 - Panel Downloader
+## 1-2 Download Panels
 
 This script takes each of the panels in the listed in the output file from the Download IDs script (1.1,) and uses this information to download begin to download individual panels from the PanelApp / PanelApp Australia API. 
 
