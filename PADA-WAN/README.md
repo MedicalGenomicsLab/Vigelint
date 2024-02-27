@@ -7,9 +7,9 @@
 - [Running PADA-WAN](#running-pada-wan)
   - [Download IDs](#1-1-Download-IDs)
   - [Download Panels](#1-2-Download-Panels)
-  - [Summarise Panels](#13-Summarise-Panels)
-  - [Determine How Genes Change](#21-Download-Panels)
-  - [Determine The Cumulative Gene Changes](#23-Download-Panels)
+  - [Summarise Panels](#1-3-Summarise-Panels)
+  - [Determine How Genes Change](#2-1-Download-Panels)
+  - [Determine The Cumulative Gene Changes](#2-2-3-Cumulative-Gene-Changes)
 
 
 # PADA-WAN Overview 
@@ -166,7 +166,7 @@ There are some things to note about this approach:
 6. This script was developed in Australia, and during testing, we found that requesting data from the Genomics England version of PanelApp would occassionally time out. Despite a generous retry time limit, this issue persisted. Restarting the script addresses this issue. While this issue is likely due to the ~16,000km between the PanelApp server and the requesting computing, we highlight this issue incase people in Europe run into issues when trying to download data from PanelApp Australia.
 
 
-## 13 - Summarise-Panels
+## 1-3 Summarise-Panels
 
 The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a monthly summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month. This output from this script is very important to the following analyses. This script has been updated to automatically produce plots showing the number of genes and diagnostic genes each month of the analysis window.
 
@@ -224,7 +224,7 @@ _Notes on 1-4_
 This script is not required for the Vigilent Pipeline, however it has been included here, because the prior 'PanelApp Pipeline' has been superseeded by this version of the tools.
     
 
-## 21 - Characterise Gene Changes
+## 2-1 Characterise Gene Changes
 
 This script determines the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. This script has been upgraded to list the individual genes that have been changed, instead of just determining the number of gene changes. Thanks to those who highlighted this oversight.
 
@@ -249,7 +249,7 @@ This script determines the genes that have been added to, and removed from a pan
 
   This script also requires a parameters file. An example of the parameter file can be found in /PADA-WAN/2-1 Determine Gene Changes/
 
-## 223 - Cumulative Gene Changes
+## 2-2-3 Cumulative Gene Changes
 
 This script determines the cumulative number of gene changes that occur each month of the analysis window. This script has been re-written from version 1.0 by combining 2.2 and 2.3 so that the Gene Changes are automatically ploted.
 
