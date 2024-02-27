@@ -188,13 +188,24 @@ The information in the parameters file are as follows:
     python3 1-3_SummarisePanels.py --file-path parameters_file.txt
     Rscript PlotMonthlyChanges.R [DIRECTORY CONTAIN MONTHLY SUMMARIES] [DIRECTORY FOR PLOTS]
 
-
-
 ## 1.4 - Panel Factoriser 
 
 The matrices script, opens the monthly summary file for each panel and combines this information into a matrix for a specific variable (no. of releases, no. of genes, no. of diagnostic genes, etc). For example, this script produces an output file that shows number of releases there was been for each panel, over the space of each month.
 
 This script also requires a parameters file. An example of the parameter file can be found in /PADA-WAN/1-4 Panel Factoriser/
+
+***The Parameters File***
+
+1. **EXP_NAME:**      [Name of your experiment]
+2. **VERSION:**	      [either 'AU' or 'UK']]
+3. **INPUT_DIR:**	    [directory location]
+4. **OUTPUTDIR**:	    [directory location]
+5. **ID_DATE:**	      [YYYY,MM,DD] - When was the ID file generated
+6. **STARTDLDATE:**	  [YYYY,MM,DD] - When were raw panels begin downloading
+7. **ENDDLDATE:**	    [YYYY,MM,DD] - When did the downloading of the panels finish
+8. **ANALYSIS_DATE:** [YYYY,MM,DD] - When does this analysis take place?
+
+***Running the scripts***
 
   To run this script use the following commands:
 
