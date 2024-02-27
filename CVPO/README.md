@@ -24,13 +24,16 @@ CVPO has been tested on a local, desktop computer (MacOS 13.3.1) and a cluster c
 
 # CVPO Overview 
 
-CVPO is broken into two parts, a manual part, and an automatic part. **The manual part is centred around downloading the correct data from ClinVar and ensuring that data is labelled correctly.**
+CVPO is broken into two stages - one stage centers around on downloading and re-naming the data, while the second stage focuses on combining that data into a matrix.
+**It should be noted that re-naming of data is done manually - I have elected not to automate this step to ensure that people understand that the definition of a month differs between ClinVar and PADA-WAN**
 
 <h2> Preparing the data for CVPO </h2>
 
 ## Downloading the Getting the Gene Data From ClinVar
 
-_Step 1:_ open Gene_Specific_Summary_rsync.sh. Copy the command for the time interval you want to examine. With the command line natigate to the folder you wish to store the data in. In the command line enter the command you copied. 
+CVPO requires the information in the offical ClinVar tab delimited Gene Specific Summary files. This information can be collected automatically through (rsync) or manually.
+
+_Automatically retrive the ClinVar data:_ open _Gene_Specific_Summary_rsync.sh_. Copy the command for the time interval you want to examine. With the command line natigate to the folder you wish to store the data in. In the command line enter the command you copied. 
 
 - For example:
 
@@ -38,22 +41,18 @@ _Step 1:_ open Gene_Specific_Summary_rsync.sh. Copy the command for the time int
 
 _Manual Alternative:_ **Download the Gene Specific Summary Files**
 
-- CVPO requires the information in the offical ClinVar tab delimited Gene Specific Summary files.
-
 - To access the Tab-delimited Gene Specific Summary files from ClinVar, navigate to:
   [ClinVar FTP Archive](https://ftp.ncbi.nlm.nih.gov/pub/clinvar/tab_delimited/archive/)
 
 - Download the _Gene Specific Summary_ file for each period, that you wish to merge into a single matrix.
 
-_Step 2:_ **Manually Rename the Gene Specific Summary Files**
+**Manually Rename the Gene Specific Summary Files**
 - Once downloaded and extracted, the resulting file will be named _gene_specific_summary.txt_. Unfortunately, this process strips the time period from the name of the file.
-As ClinVar uses an alternative method to define a month (A Thursday close to the start of the month) to the one used by used by PADA-WAN (11:59pm on the last day of the month), this provides us with an oppurtunity to assign a consistent time peroid to each.
+As ClinVar defines a month (A Thursday close to the start of the month) and PADA-WAN defines a month (11:59pm on the last day of the month) differently, we need to re-label one data set to enable us to properly combine the data-sets. We have recommend renaming the gene specific summary files from ClinVar data.
 
-- CVPO has been designed to expect files in the following format 'year'_'month'-gene_specific_summary.txt. In this model, year should be written 2024, and months should be written as two digit numbers (i.e. May is 05).
-
-- For example; this means the _Gene Specific Summary file_ originally labelled as gene_specific_summary_2023-06.txt.gz (released on the 1st of June 2023) will be renamed to be 2023_05-gene_specific_summary.txt as it is the most comparible to the PADA-WAN data from May 2023 (representing PanelApp on 2023-05-31).
+- CVPO has been designed to expect files in the following format 'year'_'month'-gene_specific_summary.txt. When renaming the ClinVar data, the year should be written with four digits (i.e. 2023), and months should be written as two digit numbers (i.e. May is 05). For example; this means the _Gene Specific Summary file_ originally labelled as gene_specific_summary_2023-06.txt.gz (released on the 1st of June 2023) will be renamed to be 2023_05-gene_specific_summary.txt as it is the most comparible to the PADA-WAN data from May 2023 (representing PanelApp on 2023-05-31).
  
-_Step 3:_ **Manually Move The Gene Specific Summary Files**
+**Manually Move The Gene Specific Summary Files**
 
 To ensure that CVPO analyses the appropriate file, each renamed file should be stored in a folder that only contains renamed gene specific summary files.
 
@@ -65,7 +64,7 @@ Run the script using the following command:
 
     R Rosetta_Script.R 
 
-Note the variable describing the location of file produced from this work needs to be updated for your system.
+Note the variable describing the location of file produced from this script needs to be updated for your system.
 
 <h2> Running CVPO </h2>
 
