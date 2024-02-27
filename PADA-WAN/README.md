@@ -2,9 +2,9 @@
 
 **PanelApp Downloader, Analyser - Web Application Navigator (PADA-WAN)** is a series of custom python scripts designed to download the information from either PanelApp or PanelApp Australia and characterise how each panel has evolved over a period of time. This pipeline was originally developed for Evolution of virtual gene panels over time and implications for genomic data re-analysis (Robertson et al., 2023), but has since been updated to support both PanelApp Australia and the Genomics England Instance of PanelApp and fix some errors when dealing with outlyer panels. Resultingly, this version replaces the version listed in the PanelApp-Pipeline.
 
-**If you want jump right into running each of the scripts **
+**If you want jump right into running each of the scripts, please check out these links **
 
-- [Running PADA-WAN](#running-padawan)
+- [Running PADA-WAN](#running-pada-wan)
   - [Downloding Panel IDs](#python-dependencies)
   - [1.1 - Download IDs](#1.1DownloadIDs)
   - [Summarising Panels](#panelapp-tokens)
