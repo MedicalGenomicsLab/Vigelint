@@ -244,6 +244,16 @@ This script determines the genes that have been added to, and removed from a pan
 
 This script determines the cumulative number of gene changes that occur each month of the analysis window. This script has been re-written from version 1.0 by combining 2.2 and 2.3 so that the Gene Changes are automatically ploted.
 
+***The Parameters File***
+
+1. **EXP_NAME:**	        [Name of your experiment]
+2. **VERSION:**	          [either 'AU' or 'UK']
+3. **INPUTDIR:**	        [directory location - Gene Changes]
+4. **OUTPUTDIR:**	        [directory location - Cumulative Changes]
+5. **PLOTDIR:**	          [directory location - plot]
+
+***Running the scripts***
+
   To run this script use the following commands:
 
     python3 2-2_CumulativeChanges.py --file-path parameters_file.txt
