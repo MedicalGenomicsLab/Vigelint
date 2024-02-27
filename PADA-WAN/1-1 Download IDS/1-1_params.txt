@@ -1,5 +1,5 @@
 ##VAR   VALUE
-INDIVIDUAL_RUN: UK      #Select either the Genomics England instance (UK) or PanelApp Australia (AU)
+INDIVIDUAL_RUN: AU  #Select either the Genomics England instance (UK) or PanelApp Australia (AU)
 ###
 OUT-DIRAU:      /working/lab_nicw/alanR/Vigelint/IDS
 PATH_AU:        https://panelapp.agha.umccr.org/api/v1/panels/?page=
