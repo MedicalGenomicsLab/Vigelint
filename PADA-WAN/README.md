@@ -8,7 +8,7 @@
   - [Download IDs](#1-1-Download-IDs)
   - [Download Panels](#1-2-Download-Panels)
   - [Summarise Panels](#1-3-Summarise-Panels)
-  - [Determine How Genes Change](#2-1-Download-Panels)
+  - [Determine How Genes Change](#2-1-Characterise-Gene-Changes)
   - [Determine The Cumulative Gene Changes](#2-2-3-Cumulative-Gene-Changes)
 
 
