@@ -6,7 +6,7 @@
 
 - [Running PADA-WAN](#running-pada-wan)
   - [Download IDs](#11-Download-IDs)
-  - [Download Panels](#12-Panel-Downloader)
+  - [Download Panels](#12-Download-Panels)
   - [Summarise Panels](#13-Summarise-Panels)
   - [Determine How Genes Change](#21-Download-Panels)
   - [Determine The Cumulative Gene Changes](#23-Download-Panels)
