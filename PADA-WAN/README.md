@@ -166,14 +166,14 @@ The third script opens the summary file produced by the second script, and, iden
 This script also requires a parameters file. This file contains the location the files produced by 1.2, as well as the information needed to plot the information in the monthly summaries.
 The information in the parameters file are as follows:
 
-VERSION:         [either 'AU' or 'UK']
-INPUT_DIR:       [directory location] - Location of the raw panel data 
-OUTPUTDIR:       [directory location] - Location of the processed panel data 
-ID_DATE:         [YYYY,MM,DD] - When was the ID file generated
-STARTDLDATE:     [YYYY,MM,DD] - When were raw panels begin downloading 
-ENDDLDATE:       [YYYY,MM,DD] - When did the downloading of the panels finish
-ANALYSIS_DATE:   [YYYY,MM,DD] - When does this analysis take place?
-PLOT_DIR:        [directory location] - where should the plots go?
+1. **VERSION:**         [either 'AU' or 'UK']
+2. **INPUT_DIR:**       [directory location] - Location of the raw panel data
+3. **OUTPUTDIR:**       [directory location] - Location of the processed panel data
+4. **ID_DATE:**         [YYYY,MM,DD] - When was the ID file generated
+5. **STARTDLDATE:**     [YYYY,MM,DD] - When were raw panels begin downloading
+6. **ENDDLDATE:**       [YYYY,MM,DD] - When did the downloading of the panels finish
+7. **ANALYSIS_DATE:**   [YYYY,MM,DD] - When does this analysis take place?
+8. **PLOT_DIR:**        [directory location] - where should the plots go?
 
 **An example of the parameter file can be found in /PADA-WAN/1-3 Summarise Panels/**
 
