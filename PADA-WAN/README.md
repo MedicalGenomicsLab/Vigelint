@@ -159,22 +159,36 @@ There are some things to note about this approach:
 
 ## 1.3 - Panel Summariser
 
-The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a monthly summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month. This output from this script is very important to the following analyses. This script has been updated to automatically produce plots showing the number of genes and diagnostic genes each month of the analysis window,
+The third script opens the summary file produced by the second script, and, identifies the specific version of a panel present one last day of each month. It produces a monthly summary file for each panel downloaded by script 1.2, that only shows 1 version of the panel for each month. This output from this script is very important to the following analyses. This script has been updated to automatically produce plots showing the number of genes and diagnostic genes each month of the analysis window.
 
-This script also requires a parameters file. This file contains the location the files produced by 1.2.
+***The Parameters File***
 
-An example of the parameter file can be found in /PADA-WAN/1-3 Summarise Panels/
+This script also requires a parameters file. This file contains the location the files produced by 1.2, as well as the information needed to plot the information in the monthly summaries.
+The information in the parameters file are as follows:
 
-  To run this script use the following commands:
+VERSION:         [either 'AU' or 'UK']
+INPUT_DIR:       [directory location] - Location of the raw panel data 
+OUTPUTDIR:       [directory location] - Location of the processed panel data 
+ID_DATE:         [YYYY,MM,DD] - When was the ID file generated
+STARTDLDATE:     [YYYY,MM,DD] - When were raw panels begin downloading 
+ENDDLDATE:       [YYYY,MM,DD] - When did the downloading of the panels finish
+ANALYSIS_DATE:   [YYYY,MM,DD] - When does this analysis take place?
+PLOT_DIR:        [directory location] - where should the plots go?
+
+**An example of the parameter file can be found in /PADA-WAN/1-3 Summarise Panels/**
+
+  _Notes on 1-3_
+1. When preparing the parameters file, please ensure that there is no trailing white space.
+2. It is not required to plot the monthly changes, but I find it to be helpful
+
+***Running the scripts***
+
+  To run these scripts use the following commands:
 
     python3 1-3_SummarisePanels.py --file-path parameters_file.txt
     Rscript PlotMonthlyChanges.R [DIRECTORY CONTAIN MONTHLY SUMMARIES] [DIRECTORY FOR PLOTS]
 
-  _Notes on 1-3_
-1. When preparing the parameters file, please ensure that there is no trailing white space.
-2. It is not require to plot the monthly changes, but I find it to be helpful
 
-   
 
 ## 1.4 - Panel Factoriser 
 
