@@ -197,7 +197,7 @@ This script also requires a parameters file. An example of the parameter file ca
 ***The Parameters File***
 
 1. **EXP_NAME:**      [Name of your experiment]
-2. **VERSION:**	      [either 'AU' or 'UK']]
+2. **VERSION:**	      [either 'AU' or 'UK']
 3. **INPUT_DIR:**	    [directory location]
 4. **OUTPUTDIR**:	    [directory location]
 5. **ID_DATE:**	      [YYYY,MM,DD] - When was the ID file generated
@@ -220,6 +220,17 @@ This script is not required for the Vigilent Pipeline, however it has been inclu
 This script determines the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. This script has been upgraded to list the individual genes that have been changed, instead of just determining the number of gene changes. Thanks to those who highlighted this oversight.
 
 ***The Parameters File***
+
+1. **EXP_NAME**:	        [Name of your experiment]
+2. **VERSION**:	          [either 'AU' or 'UK']
+3. **OUTPUTDIR**:	        [directory location]
+4. **START_DATE**:	      [YYYY,MM,DD]
+5. **END_DATE**:	        [YYYY,MM,DD]
+6. **ID_LOCATION**:	      [directory location]
+7. **ID_FILE**:	          [name of ID file]
+8. **MONTHLY_LOC**:	      [directory location]
+9. **PANEL_LOC**:	        [directory location]
+10. **ANALYSIS_DATE**:    [YYYY,MM,DD]
 
 ***Running the scripts***
 
