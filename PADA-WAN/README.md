@@ -95,7 +95,7 @@ This process is largely the same as the process of PanelApp Australia described 
 
 This section decribes the steps involved in running each of the scripts that make up the PADA-WAN pipeline, as well as the information that's described in each of the parameters files.
  
-## 1.1 - Download IDs
+## 1.1-Download IDs
 
 The first script in the PADA-WAN pipeline queries the PanelApp API to retrieve a list containing all available panels. In addition to this informaiton, this script also collects information about each panel’s numeric panel-ID, and super panel / rare-disease status. Information about the most current version, the date of release of this version and the number of genetic entities are also downloaded. 
 
