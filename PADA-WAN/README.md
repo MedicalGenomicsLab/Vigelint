@@ -219,6 +219,10 @@ This script is not required for the Vigilent Pipeline, however it has been inclu
 
 This script determines the genes that have been added to, and removed from a panel, as well as the genes that have been upgraded to and downgraded from diagnostic status. This script has been upgraded to list the individual genes that have been changed, instead of just determining the number of gene changes. Thanks to those who highlighted this oversight.
 
+***The Parameters File***
+
+***Running the scripts***
+
   To run this script use the following commands:
 
     python3 2-1_DetermineChange.py --file-path parameters_file.txt
